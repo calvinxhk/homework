@@ -1,0 +1,23 @@
+{% extends 'backstage/backblock.html' %}
+
+{% block css%}{% endblock %}
+
+{% block html %}
+    {% for row in data %}
+        <div>
+
+
+            <a>查看详情</a>
+        </div>
+
+    {% endfor %}
+
+{% endblock %}
+
+
+{% block js%}
+    <script>
+   $('#user').removeClass('active');
+   $('#group').addClass('active');
+    </script>
+{% endblock %}

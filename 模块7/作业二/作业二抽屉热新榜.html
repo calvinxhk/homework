@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="邢怀康">
+    <meta name="keywords" content="抽屉，新闻">
+    <meta name="description" content="通过用户推荐生成最热榜单。看抽屉新热榜，每日热门、有趣资讯尽收眼底。">
+    <link  rel="icon" href="timg.jpg">
+    <link type="text/css" rel="stylesheet" href="mystyle.css">
+    <title>抽屉热新榜</title>
+    <style>
+
+
+    </style>
+    <script src="jquery-3.2.1.js"></script>
+</head>
+<body>
+    <!--页面头部-->
+    <div class="po">
+        <header>
+            <a  class="icon" href="http://www.baidu.com"  >抽屉热新榜</a>
+            <div class="action-menu">
+                <a href="http://www.baidu.com" >全部</a>
+                <a href="http://www.baidu.com" >42区</a>
+                <a href="http://www.baidu.com" >段子</a>
+                <a href="http://www.baidu.com" >图片</a>
+                <a href="http://www.baidu.com" >挨踢1024</a>
+                <a href="http://www.baidu.com" >你问我答</a>
+
+            </div>
+            <div class="assign">
+                <a href="javascript:;">注册</a>
+                <a href="javascript:;">登录</a>
+                <script>
+                   $(".assign a").click(function(){$(".user-login-mask").css("display","block")})
+                </script>
+            </div>
+            <div class="search">
+                <form >
+                <input type="text" name="search" value="新闻">
+                 <a href="http://www.baidu.com" ><span class="ico"></span>
+                 </a>
+                </form>
+
+            </div>
+        </header>
+    </div>
+    <div class="replace"></div>
+    <div class="main-contain">
+        <div class="content-left">
+            <div class="top-area" >
+				<div class="part-left">
+					<a href="javascript:;" class="hot">最热</a>
+					<a href="javascript:;" class="find" >发现</a>
+					<a href="javascript:;" class="what">人类发布</a>
+
+				</div>
+
+				<div class="part-right">
+					<a href="javascript:"  class="active hotbtn" >即时排序</a>
+					<a href="javascript:"  class="newbtn" >24小时</a>
+					<a href="javascript:" class="newbtn" >3天</a>
+				</div>
+
+				<a href="javascript:;" class="publish" >
+					<span class="icon1"></span>
+                    <span class="n2"style="font-size:14px">发布</span>
+				</a>
+			</div>
+            <div class="content-list2">
+                <div class="content-item" >
+                    <div class="news-pic">
+                        <img  class="news-image" src="item.jpg" alt="抽屉新热榜" style="display: inline;">
+                        <input type="text" style="display:none" id="news-image" value="0">
+                    </div>
+                    <div class="news-content" >
+                        <div class="part1" style="line-height:20px">
+                            <a href="javascript:" class="word" style="text-decoration:underline">
+                                你知道PS有多叼嘛  ​(@Tani是个绘图匠)
+                            </a>
+                            <a href="javascript:" class="n2">
+                                <span class="content-kind" style="color:#b4b4b4;font-size:12px">图片</span>
+                            </a>
+
+                        </div>
+
+                        <div class="part2" style="padding-top: 16px;">
+                            <a href="javascript:;" class="digg-a" >
+                                <span class="icon-hand"></span>
+
+                            </a>
+                            <b id="like">212</b><span id="plus1">+1</span><span id="minus1">-1</span>
+                            <a href="javascript:;" class="discus-a"  >
+                                <span class="icon-note"></span>
+                                <b>42</b>
+                            </a>
+                            <a href="javascript:;" class="collect-a" >
+                                <span class="icon-collect"></span>
+                                <b>私藏</b>
+                            </a>
+                            <a href="javascript:" class="user-a">
+                                <span><img src="//img3.chouti.com/CHOUTI_20180115/D4542C9463604AAAB877A604676C2D0B_W180H180=32x32.jpg?quality=80" id="icon-head"></span>
+                                <b>Tani是个绘图匠</b></a>
+
+                            <span class="left time-into">
+                                <a class="time-a" href="javascript:"  >
+                                    <b>19小时42分钟前</b></a>
+                                <span class="operate" style="color:#ccc">入热榜</span>
+                            </span>
+                            <span class="share-site-to" style="display:none">
+                                <span style="color:#ccc">分享到</span>
+                                <span class="share-icon">
+                                    <a class="icon-sina"  href="javascript:;" ></a>
+                                    <a class="icon-douban"  href="javascript:;"></a>
+                                    <a class="icon-qqzone"  href="javascript:;"></a>
+                                    <a class="icon-renren"  href="javascript:;"></a>
+                                </span>
+                            </span>
+                        </div>
+
+                        <div class="comment-box-area"  style="display:none">
+                            <div class="pinglun arrow" ></div>
+                            <a class="pinglun close-comt"  href="javascript:;" ></a>
+                            <div class="corner comment-box" >
+                                <div class="loading-ico loading-ico-top"  style="margin-left:200px;">加载中，请稍候...</div>
+                                <div class="comment-box-top" >
+                                    <div class="tip-1">最热评论(<span id="newestCount-16705936">3</span>)</div>
+                                    <div class="tip-2">
+                                        <a href="/link/16705936" target="_blank">
+                                            <em class="pinglun em1"></em>
+                                            <span>去评论页面</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <ul class="filetree comment-list-top-2" id="comment-list-top-16705936"></ul>
+                                <div class="huifu-top-box" id="huifu-top-box-16705936">
+                                    <div class="box-l txt-input-area-div-top corner no-corner-bottom">
+                                        <div id="lab-comment-top-16705936" class="lab-comment-top">回复
+                                            <span id="nick--16705936"></span>:
+                                        </div>
+                                        <textarea  maxlength="150"  class="txt-huifu txt-huifu-top"></textarea>
+                                    </div>
+                                    <div class="box-r">
+                                        <a id="pub-btn-top-16705936"  href="javascript:;" class="pub-icons add-pub-btn add-pub-btn-unvalid">评论</a>
+                                        <a id="pub-loading-top-16705936" href="javascript:;" class="loading-ico loading-ico-top pub-loading-top">发布中...</a>
+                                    </div>
+                                </div>
+                                <div class="tip-3" id="hidden-comt-16705936">
+                                    <a href="javascript:;" class="hiddenCom-Btn" >
+                                        <em class="pinglun em2"></em>
+                                        <span>收起</span>
+                                    </a>
+                                </div>
+                                <div class="write-error-box-top">
+                                    <div class="write-error-desc" id="write-error-desc-16705936"></div>
+                                </div>
+                            </div>
+                            <input type="hidden" id="hidsubjectid-16705936" value="4">
+                        </div>
+                    </div>
+                    <div class="comment-area-box">
+                        <div class="comment-arrow"></div>
+                        <div class="comment-list">
+                            <div class="comment-title">
+                                <div class="title1">最新评论<span>(40)</span></div>
+                                <div class="title2"><span id="comment-back"></span><a href="javascript:;" style="color:#99aecb">去评论页面</a></div>
+                                <div class="title3"><a href="javascript:;" id="comment-exit"></a></div>
+                            </div>
+                            <div class="comment-item">
+                                <ul style="padding:0 20px">
+                                    <li class="comment-list-item"></li>
+                                    <li class="comment-list-item"></li>
+                                    <li class="comment-list-item"></li>
+                                    <li class="comment-list-item"></li>
+                                    <li class="comment-list-item"></li>
+                                    <li class="comment-list-item"></li>
+                                    <li class="comment-list-item"></li>
+                                </ul>
+                            </div>
+                            <div class="comment-bottom">
+                                <div class="comment-view">
+                                    <form><textarea id="textarea"></textarea></form>
+                                </div>
+                                <a href="javascript:;" class="view">评论</a>
+                                <a href="javascript:;" class="waiting">发布中</a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+            </div>
+            <div  class="page-area">
+					 <div id="dig_lcpage">
+                         <ul style="list-style-type:none">
+                             <li><span class="ct_pagepa">1</span></li>
+                             <li><a href="/all/hot/recent/2" class="ct_pagepa">2</a></li>
+                             <li><a href="/all/hot/recent/3" class="ct_pagepa">3</a></li>
+                             <li><a href="/all/hot/recent/4" class="ct_pagepa">4</a></li>
+                             <li><a href="/all/hot/recent/5" class="ct_pagepa">5</a></li>
+                             <li><a href="/all/hot/recent/6" class="ct_pagepa">6</a></li>
+                             <li><a href="/all/hot/recent/7" class="ct_pagepa">7</a></li>
+                             <li><a href="/all/hot/recent/8" class="ct_pagepa">8</a></li>
+                             <li><a href="/all/hot/recent/9" class="ct_pagepa">9</a></li>
+                             <li><a href="/all/hot/recent/10" class="ct_pagepa">10</a></li>
+                             <li><a href="/all/hot/recent/2" class="ct_pagepa">下一页</a></li>
+                         </ul>
+                     </div>
+			</div>
+
+        </div>
+        <div class="content-right">
+            <div class="report" style="display:inline-block;margin-right:10px">
+                <a href="javascript:;">
+                    <img src="report_children.png">
+                </a>
+            </div>
+            <div class="report2" style="display:inline-block">
+                <a href="javascript:;">
+                    <img src="report.png">
+                </a>
+            </div>
+            <div class="question" style="">
+                <a href="www.baidu.com">如何避免自己被封号</a>
+            </div>
+            <div class="ad" style="margin-top:20px">
+                <a href="javascript:;">
+                    <img src="homepage_download.png">
+                </a>
+            </div>
+            <div class="top-band">
+                <div class="title" style="margin-top:15px ">
+                    <span style="font-weight:bold">24小时</span>
+                    <span style="color:red;font-weight:bold">TOP 10</span>
+                </div>
+                <div class="band">
+                    <div style="background:#4767b2;text-align:center;height:35px;position:relative">
+                        <span style="color:white">最热榜</span>
+                        <div class="arrow"></div>
+                    </div>
+                    <div class="content-news">
+                        <div class="item"></div>
+                        <div class="item"></div>
+                        <div class="item"></div>
+                        <div class="item"></div>
+                        <div class="item"></div>
+                        <div class="item"></div>
+                        <div class="item"></div>
+                        <div class="item"></div>
+                        <div class="item"></div>
+                        <div class="item"></div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="foot-nav" >
+            <a href="javascript:;" >关于我们</a>
+            <span>|</span>
+            <a href="javascript:;" >联系我们</a>
+            <span>|</span>
+            <a href="javascript:;" >服务条款</a>
+            <span>|</span>
+            <a href="javascript:;" >隐私政策</a>
+            <span>|</span>
+            <a href="javascript:;" >抽屉新热榜工具</a>
+            <span>|</span>
+            <a href="javascript:;" >下载客户端</a>
+            <span>|</span>
+            <a href="javascript:;" >意见与反馈</a>
+            <span>|</span>
+            <a href="javascript:;" >友情链接</a>
+            <span>|</span>
+            <a href="javascript:;" >公告</a>
+            <a href="javascript:;"  style="margin-left:0;vertical-align:-2px" ><img src="ct_rss.gif" width="36" height="14"></a>
+        </div>
+        <div class="foot-nav2">
+            <a target="_blank" href="javascript:;"><img class="foot_e" src="gozap-logo.gif"></a>
+            <span class="foot_d">旗下站点</span>
+            <span class="foot_a">©2018 chouti.com</span>
+            <a href="javascript:;" class="foot_b">京ICP备09053974号-3 京公网安备 110102004562</a>
+            <div >
+                <span class="foot_d">违法和不良信息举报：</span>
+                <span class="foot_a">电话：010-58302039  </span>
+                <span class="foot_a" style="margin-left: 15px;">邮箱：<a style="color: #369;margin-right: 10px;" href="javascript:;">110.com</a> </span>
+            </div>
+            <div >版权所有：邢怀康</div>
+        </div>
+    </div>
+    <div class="foot">
+        <div class="user-login-mask">
+             <div class="content-list">
+                <div class="box-login">
+                    <div class="left">
+                        <div class="header">登录</div>
+                        <div class="body-login">
+                            <div class="tab-box">
+                                <span id="phone-login">手机号登录</span>|
+                                <span id="user-login" style="color:blue">用户名登录</span>
+                            </div>
+                            <div class="phone-login">
+                                <div class="part1">
+                                <div>
+                                    <select name="区号">
+                                         <option>中国（+86）</option>
+                                         <option>中国香港（+852）</option>
+                                         <option>日本（+81）</option>
+                                         <option>新加坡（+65）</option>
+                                     </select>
+                                </div>
+                                <form>
+                                    <div class="pr"><input type="text" name="phone" placeholder="手机号"></div>
+                                    <div class="pr"><input type="text" name="phone" placeholder="密码"></div>
+                                </form>
+                                </div>
+                                 <div>
+                                     <div style="font-size:12px;margin:20px 20px;text-align:center">
+                                         <span ><input type="checkbox" checked>一个月内自动登录</span>
+                                        <span><a href="javascript:;">忘记密码？</a></span>
+                                     </div>
+                                     <div style="text-align:center">
+                                         <button class="login" >登录</button>
+                                     </div>
+                                 </div>
+                            </div>
+                            <div class="id-login">
+                                <div class="part1">
+                                <form>
+                                    <div class="pr"><input  type="text" name="phone" placeholder="用户名"></div>
+                                    <div class="pr"><input  type="text" name="phone" placeholder="密码"></div>
+                                </form>
+                                  </div>
+                                <div style="font-size:12px;margin:20px 20px;text-align:center">
+                                         <span ><input type="checkbox" checked>一个月内自动登录</span>
+                                        <span><a href="javascript:;">忘记密码？</a></span>
+                                </div>
+                                <div style="text-align:center">
+                                    <button class="login">登录</button>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="right">
+                        <div class="header">注册</div>
+                        <div class="body-register">
+                            <div class="tab-box">
+                                <span class="step1" style="color:blue">1 填写手机号</span>>
+                                <span class="step2">2 填写基本资料</span>
+                            </div>
+                            <div class="step1">
+                                <div style="padding:0 70px">
+                                <div>
+                                    <select name="区号">
+                                         <option>中国（+86）</option>
+                                         <option>中国香港（+852）</option>
+                                         <option>日本（+81）</option>
+                                         <option>新加坡（+65）</option>
+                                     </select>
+                                </div>
+
+                                <form>
+
+                                    <div class="pr">
+                                        <input type="text" name="phone" placeholder="手机号" style="width:120px">
+                                        <button class="sid" >验证码</button>
+                                    </div>
+                                    <div style="font-size:12px">
+                                        <span>获取不到短信？</span>
+                                        <a href="javascript:;">获取语音验证码</a>
+                                    </div>
+                                    <div class="pr"><input type="text" name="phone" placeholder="验证码"></div>
+                                    <div class="pr"><input type="text" name="phone" placeholder="密码"></div>
+                                    <div ><button class="login">下一步</button></div>
+                                </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="exit" style="cursor:pointer"></div>
+                </div>
+             </div>
+        </div>
+        <div class="back-to-top" ></div>
+    </div>
+
+</body>
+<script src="icon.js"></script>
+</html>

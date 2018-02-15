@@ -1,0 +1,32 @@
+* {margin:0;padding:0;font-size: 14px;color: black;text-decoration: none;list-style: none}
+body{width: 1600px;height: 100%;overflow-x: hidden}
+#main-contain{width: 1600px;height: 800px;background: url(image/background.jpg) no-repeat 0 0}
+#header{width:1600px;height: 100px}
+#title{margin-left: 400px;padding: 20px;float: left}
+.title{color: white}
+#bigtitle{color: white;font-size: 24px;font-weight: bolder}
+#user{float: left;padding-top: 40px;padding-left: 20px}
+#person{display: inline-block;width: 15px;height: 15px;background: url(image/person.png) no-repeat 0 0;background-size: 100% 100%;margin-right: 5px}
+#exit{display: inline-block;width: 15px;height: 15px;background: url(image/exit.png) no-repeat 0 0;background-size: 100% 100%;margin: 0 5px}
+#guide{width: 150px;height: 300px;background: #f0f3ef;text-align: center;border-radius: 10px;margin:0 20px;float: left}
+#guide li {padding: 10px;width: 130px}
+#guidetitle{background: blue;color: white;border-radius: 10px}
+#guidelist1{display: none}
+#main {float: left;background: #f0f3ef;width: 1000px;height: 600px;position: relative;right: 320px;top: 40px}
+.main-head{float: left;width: 70px;height: 30px;background: blue;color: white;border-radius: 5px;padding: 5px}
+#main-search{width: 1300px;}
+#main-searchtitle{padding: 20px}
+#main-searchc{width: 1000px}
+.main-search{float: left;padding: 5px}
+#main-searchb{display: block;width: 100px;height: 30px;border-radius: 5px;background: #015e98;color: white;float: left}
+#main-result{float: left;margin-top: 50px;background: #e1e1e1;width: 1000px}
+#main-searchc input,#main-searchc select{width: 100px;height:20px;margin: 0 10px;padding: 0}
+#resultheader{width: 1000px;border-radius: 5px;height: 50px;font-size: 18px;padding: 10px;line-height: 50px}
+#resulttitle{background: #015e98;text-align: center;clear: right}
+#resulttitle li {float: left;width:130px;padding: 5px;margin: auto;background: #015e98;color: white;border: #e1e1e1 1px solid}
+#result{float: left}
+.result li {float: left;width: 130px;padding: 5px;background: white;text-align: center;height: 40px;line-height: 40px}
+.editor{display: inline-block;width: 20px;height: 20px;background: url(image/editor.png);background-size: 100% 100%;margin-right: 10px}
+.save{display: inline-block;width: 20px;height: 20px;background: url(image/save.png);background-size:100% 100%;margin-right: 10px}
+.delete{display: inline-block;width: 20px;height: 20px;background: url(image/删除.png);background-size:100% 100%}
+.result {width: 1000px;height: 50px;background: white;border: #f0f3ef 1px solid}

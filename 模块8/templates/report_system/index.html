@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>邢怀康的报障系统主页</title>
+    <link rel="stylesheet" href="/static/plugins/bootstrap-3.3.7-dist/css/bootstrap.css">
+    <link rel="icon" href="/static/images/logo.jpg">
+</head>
+<body>
+    <header style="text-align: center">
+        <img src="/static/images/rlog.png" style="margin: 0 auto">
+    </header>
+    <div class="row">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-2">
+            <div class="list-group">
+                <a href="#" class="list-group-item active">Cras justo odio</a>
+                <a href="#" class="list-group-item">Dapibus ac facilisis in</a>
+                <a href="#" class="list-group-item">Morbi leo risus</a>
+                <a href="#" class="list-group-item">Porta ac consectetur ac</a>
+                <a href="#" class="list-group-item">Vestibulum at eros</a>
+            </div>
+            <img src="{{ data.avatar }}">
+
+        </div>
+        <div class="col-lg-6">
+            <ul class="nav nav-pills ">
+              <li role="presentation" class="active"><a href="#">全部</a></li>
+                {% for row in blockname %}
+              <li role="presentation"><a href="#">{{ row.blockname }}</a></li>
+                {% endfor %}
+            </ul>
+            <div class="art-content" style="height: 300px">
+                <div style="float: left;width: 100px;height: 100%">点赞</div>
+                <div><a>标题</a>，
+                    <div>
+                         图片，简介，
+                    </div>
+                  <div>
+                      作者，发布时间，评论，
+                  </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-2">
+            <div class="panel panel-default">
+              <div class="panel-heading">Panel heading without title</div>
+              <div class="panel-body">Panel content</div>
+            </div>
+
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Panel title</h3>
+                </div>
+                <div class="panel-body">Panel content</div>
+            </div>
+
+        </div>
+        <div class="col-lg-1"></div>
+    </div>
+
+</body>
+</html>

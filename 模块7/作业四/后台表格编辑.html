@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>后台表格</title>
+    <script src="jquery.js"></script>
+    <link type="text/css" rel="stylesheet" href="mycss.css">
+    <link rel="icon" href="image/icon.jpg">
+    <style>
+
+    </style>
+
+</head>
+<body>
+<div id="main-contain">
+    <div id="header">
+        <div id="title"><span class="title" id="bigtitle">后台表格编辑系统</span><br><span class="title">information management system</span></div>
+        <div id="user">
+            <a href="javascript:"><i id="person"></i>:邢怀康</a>
+            <a href="javascript:"><i id="exit"></i>退出</a>
+        </div>
+    </div>
+    <div id="guide">
+        <ul>
+            <li id="guidetitle">业务受理</li>
+            <li id="guidelist">项目责任分解表
+            <ul id="guidelist1">
+                <li>第一张工作表</li>
+                <li style="color: red">第二张工作表</li>
+                <li>第三章工作表</li>
+                <li>第四张工作表</li>
+            </ul>
+            </li>
+            <li>项目责任分解图</li>
+
+        </ul>
+        
+    </div>
+    <div id="main-head">
+            <ul>
+                <li class="main-head">第一张表</li>
+                <li class="main-head">第二张表</li>
+                <li class="main-head">第三张表</li>
+                <li class="main-head">第四张表</li>
+            </ul>
+        </div>
+    <div id="main">
+        <div id="main-search">
+            <div id="main-searchtitle">筛选条件选择</div>
+            <div>
+                <ul id="main-searchc">
+                    <li class="main-search">事件编号<input title="事件编号" class="main-searchinput" type="text" id="main-searchid"></li>
+                    <li class="main-search">事发时间<input title="事发时间" class="main-searchinput" type="date" id="main-searchdate"></li>
+                    <li class="main-search" id="status">事件状态<select title="事件状态" class="main-searchinput" id="main-searchstatus" >
+                        <option value=""></option>
+                        <option value="">上报</option>
+                        <option value="">下发</option>
+                        <option value="">审批</option>
+                        <option value="">完成</option>
+                    </select></li>
+                    <li class="main-search" id="source">事件来源<select title="事件来源" class="main-searchinput" id="main-searchresourse" >
+                        <option value="" ></option>
+                        <option value="">室内</option>
+                        <option value="">区内</option>
+                        <option value="">市内</option>
+                    </select>
+                    </li>
+
+                    
+                </ul>
+            </div>
+            <div >
+                <button id="main-searchb">搜索</button>
+            </div>
+
+        </div>
+        <div id="main-result">
+            <div id="resultheader">筛选结果</div>
+            <div id="resulttitle">
+                <ul>
+                    <li >
+                        <input title="all" type="checkbox" value="all" id="selectall">全选
+                        <input title="opp" type="checkbox" value="" id="selectopp">反选
+                    </li>
+                    <li>事件编号</li>
+                    <li>事发时间</li>
+                    <li>事件状态</li>
+                    <li>事件来源</li>
+                    <li>事件内容</li>
+                    <li>操作</li>
+                </ul>
+
+            </div>
+            <div id="result">
+                <div class="result">
+                    <input style="display: none" title="编辑模式" value=0>
+                    <ul >
+                        <li class="first-checkbox"><input type="checkbox" title="checkbox" ></li>
+                        <li class="resultid" >2018030210</li>
+                        <li class="reaultdate" >2018-01-29</li>
+                        <li class="resultresourse">完成</li>
+                        <li class="resultsourse" >区内</li>
+                        <li>网站更新</li>
+                        <li>
+                            <a class="editor" href="javascript:" title="编辑"></a>
+                            <a class="save" href="javascript:" title="保存"></a>
+                            <a class="delete" href="javascript:" title="删除"></a>
+                        </li>
+                    </ul>
+                    <ul  style="display: none">
+                        <li class="first-checkbox"><input type="checkbox" title="checkbox" ></li>
+                        <li class="resultid">
+                            <input title="事件编号" class="main-searchinput" type="text" >
+                        </li>
+                        <li class="reaultdate">
+                            <input title="事发时间" class="main-searchinput" type="date" >
+                        </li>
+                        <li class="resultresourse"><select title="事件状态" class="main-searchinput"  >
+                            <option value=""></option>
+                            <option >上报</option>
+                            <option >下发</option>
+                            <option >审批</option>
+                            <option>完成</option>
+                        </select></li>
+                        <li class="resultsourse"><select title="事件来源" class="main-searchinput"  >
+                            <option value="" ></option>
+                            <option >室内</option>
+                            <option >区内</option>
+                            <option >市内</option>
+                        </select></li>
+                        <li>网站更新</li>
+                        <li>
+                            <a class="editor" href="javascript:"></a>
+                            <a class="save" href="javascript:"></a>
+                            <a class="delete" href="javascript:"></a>
+
+                        </li>
+                    </ul>
+                </div>
+                <div class="result">
+                    <input style="display: none" title="编辑模式" value=0>
+                    <ul >
+                        <li class="first-checkbox"><input type="checkbox" title="checkbox" ></li>
+                        <li class="resultid" >2018030210</li>
+                        <li class="reaultdate" >2018-01-29</li>
+                        <li class="resultresourse">完成</li>
+                        <li class="resultsourse" >区内</li>
+                        <li>网站更新</li>
+                        <li>
+                            <a class="editor" href="javascript:" title="编辑"></a>
+                            <a class="save" href="javascript:" title="保存"></a>
+                            <a class="delete" href="javascript:" title="删除"></a>
+                        </li>
+                    </ul>
+                    <ul  style="display: none">
+                        <li class="first-checkbox"><input type="checkbox" title="checkbox" ></li>
+                        <li class="resultid">
+                            <input title="事件编号" class="main-searchinput" type="text" >
+                        </li>
+                        <li class="reaultdate">
+                            <input title="事发时间" class="main-searchinput" type="date" >
+                        </li>
+                        <li class="resultresourse"><select title="事件状态" class="main-searchinput"  >
+                            <option value=""></option>
+                            <option >上报</option>
+                            <option >下发</option>
+                            <option >审批</option>
+                            <option>完成</option>
+                        </select></li>
+                        <li class="resultsourse"><select title="事件来源" class="main-searchinput"  >
+                            <option value="" ></option>
+                            <option >室内</option>
+                            <option >区内</option>
+                            <option >市内</option>
+                        </select></li>
+                        <li>网站更新</li>
+                        <li>
+                            <a class="editor" href="javascript:"></a>
+                            <a class="save" href="javascript:"></a>
+                            <a class="delete" href="javascript:"></a>
+
+                        </li>
+                    </ul>
+                </div>
+                <div class="result">
+                    <input style="display: none" title="编辑模式" value=0>
+                    <ul >
+                        <li class="first-checkbox"><input type="checkbox" title="checkbox" ></li>
+                        <li class="resultid" >2018030210</li>
+                        <li class="reaultdate" >2018-01-29</li>
+                        <li class="resultresourse">完成</li>
+                        <li class="resultsourse" >区内</li>
+                        <li>网站更新</li>
+                        <li>
+                            <a class="editor" href="javascript:" title="编辑"></a>
+                            <a class="save" href="javascript:" title="保存"></a>
+                            <a class="delete" href="javascript:" title="删除"></a>
+                        </li>
+                    </ul>
+                    <ul  style="display: none">
+                        <li class="first-checkbox"><input type="checkbox" title="checkbox" ></li>
+                        <li class="resultid">
+                            <input title="事件编号" class="main-searchinput" type="text" >
+                        </li>
+                        <li class="reaultdate">
+                            <input title="事发时间" class="main-searchinput" type="date" >
+                        </li>
+                        <li class="resultresourse"><select title="事件状态" class="main-searchinput"  >
+                            <option value=""></option>
+                            <option >上报</option>
+                            <option >下发</option>
+                            <option >审批</option>
+                            <option>完成</option>
+                        </select></li>
+                        <li class="resultsourse"><select title="事件来源" class="main-searchinput"  >
+                            <option value="" ></option>
+                            <option >室内</option>
+                            <option >区内</option>
+                            <option >市内</option>
+                        </select></li>
+                        <li>网站更新</li>
+                        <li>
+                            <a class="editor" href="javascript:"></a>
+                            <a class="save" href="javascript:"></a>
+                            <a class="delete" href="javascript:"></a>
+
+                        </li>
+                    </ul>
+                </div>
+                <div class="result">
+                    <input style="display: none" title="编辑模式" value=0>
+                    <ul >
+                        <li class="first-checkbox"><input type="checkbox" title="checkbox" ></li>
+                        <li class="resultid" >2018030210</li>
+                        <li class="reaultdate" >2018-01-29</li>
+                        <li class="resultresourse">完成</li>
+                        <li class="resultsourse" >区内</li>
+                        <li>网站更新</li>
+                        <li>
+                            <a class="editor" href="javascript:" title="编辑"></a>
+                            <a class="save" href="javascript:" title="保存"></a>
+                            <a class="delete" href="javascript:" title="删除"></a>
+                        </li>
+                    </ul>
+                    <ul  style="display: none">
+                        <li class="first-checkbox"><input type="checkbox" title="checkbox" ></li>
+                        <li class="resultid">
+                            <input title="事件编号" class="main-searchinput" type="text" >
+                        </li>
+                        <li class="reaultdate">
+                            <input title="事发时间" class="main-searchinput" type="date" >
+                        </li>
+                        <li class="resultresourse"><select title="事件状态" class="main-searchinput"  >
+                            <option value=""></option>
+                            <option >上报</option>
+                            <option >下发</option>
+                            <option >审批</option>
+                            <option>完成</option>
+                        </select></li>
+                        <li class="resultsourse"><select title="事件来源" class="main-searchinput"  >
+                            <option value="" ></option>
+                            <option >室内</option>
+                            <option >区内</option>
+                            <option >市内</option>
+                        </select></li>
+                        <li>网站更新</li>
+                        <li>
+                            <a class="editor" href="javascript:"></a>
+                            <a class="save" href="javascript:"></a>
+                            <a class="delete" href="javascript:"></a>
+
+                        </li>
+                    </ul>
+                </div>
+                <div class="result">
+                    <input style="display: none" title="编辑模式" value=0>
+                    <ul >
+                        <li class="first-checkbox"><input type="checkbox" title="checkbox" ></li>
+                        <li class="resultid" >2018030210</li>
+                        <li class="reaultdate" >2018-01-29</li>
+                        <li class="resultresourse">完成</li>
+                        <li class="resultsourse" >区内</li>
+                        <li>网站更新</li>
+                        <li>
+                            <a class="editor" href="javascript:" title="编辑"></a>
+                            <a class="save" href="javascript:" title="保存"></a>
+                            <a class="delete" href="javascript:" title="删除"></a>
+                        </li>
+                    </ul>
+                    <ul  style="display: none">
+                        <li class="first-checkbox"><input type="checkbox" title="checkbox" ></li>
+                        <li class="resultid">
+                            <input title="事件编号" class="main-searchinput" type="text" >
+                        </li>
+                        <li class="reaultdate">
+                            <input title="事发时间" class="main-searchinput" type="date" >
+                        </li>
+                        <li class="resultresourse"><select title="事件状态" class="main-searchinput"  >
+                            <option value=""></option>
+                            <option >上报</option>
+                            <option >下发</option>
+                            <option >审批</option>
+                            <option>完成</option>
+                        </select></li>
+                        <li class="resultsourse"><select title="事件来源" class="main-searchinput"  >
+                            <option value="" ></option>
+                            <option >室内</option>
+                            <option >区内</option>
+                            <option >市内</option>
+                        </select></li>
+                        <li>网站更新</li>
+                        <li>
+                            <a class="editor" href="javascript:"></a>
+                            <a class="save" href="javascript:"></a>
+                            <a class="delete" href="javascript:"></a>
+
+                        </li>
+                    </ul>
+                </div>
+                <div class="result">
+                    <input style="display: none" title="编辑模式" value=0>
+                    <ul >
+                        <li class="first-checkbox"><input type="checkbox" title="checkbox" ></li>
+                        <li class="resultid" >2018030210</li>
+                        <li class="reaultdate" >2018-01-29</li>
+                        <li class="resultresourse">完成</li>
+                        <li class="resultsourse" >区内</li>
+                        <li>网站更新</li>
+                        <li>
+                            <a class="editor" href="javascript:" title="编辑"></a>
+                            <a class="save" href="javascript:" title="保存"></a>
+                            <a class="delete" href="javascript:" title="删除"></a>
+                        </li>
+                    </ul>
+                    <ul  style="display: none">
+                        <li class="first-checkbox"><input type="checkbox" title="checkbox" ></li>
+                        <li class="resultid">
+                            <input title="事件编号" class="main-searchinput" type="text" >
+                        </li>
+                        <li class="reaultdate">
+                            <input title="事发时间" class="main-searchinput" type="date" >
+                        </li>
+                        <li class="resultresourse"><select title="事件状态" class="main-searchinput"  >
+                            <option value=""></option>
+                            <option >上报</option>
+                            <option >下发</option>
+                            <option >审批</option>
+                            <option>完成</option>
+                        </select></li>
+                        <li class="resultsourse"><select title="事件来源" class="main-searchinput"  >
+                            <option value="" ></option>
+                            <option >室内</option>
+                            <option >区内</option>
+                            <option >市内</option>
+                        </select></li>
+                        <li>网站更新</li>
+                        <li>
+                            <a class="editor" href="javascript:"></a>
+                            <a class="save" href="javascript:"></a>
+                            <a class="delete" href="javascript:"></a>
+
+                        </li>
+                    </ul>
+                </div>
+                <div class="result">
+                    <input style="display: none" title="编辑模式" value=0>
+                    <ul >
+                        <li class="first-checkbox"><input type="checkbox" title="checkbox" ></li>
+                        <li class="resultid" >2018030210</li>
+                        <li class="reaultdate" >2018-01-29</li>
+                        <li class="resultresourse">完成</li>
+                        <li class="resultsourse" >区内</li>
+                        <li>网站更新</li>
+                        <li>
+                            <a class="editor" href="javascript:" title="编辑"></a>
+                            <a class="save" href="javascript:" title="保存"></a>
+                            <a class="delete" href="javascript:" title="删除"></a>
+                        </li>
+                    </ul>
+                    <ul  style="display: none">
+                        <li class="first-checkbox"><input type="checkbox" title="checkbox" ></li>
+                        <li class="resultid">
+                            <input title="事件编号" class="main-searchinput" type="text" >
+                        </li>
+                        <li class="reaultdate">
+                            <input title="事发时间" class="main-searchinput" type="date" >
+                        </li>
+                        <li class="resultresourse"><select title="事件状态" class="main-searchinput"  >
+                            <option value=""></option>
+                            <option >上报</option>
+                            <option >下发</option>
+                            <option >审批</option>
+                            <option>完成</option>
+                        </select></li>
+                        <li class="resultsourse"><select title="事件来源" class="main-searchinput"  >
+                            <option value="" ></option>
+                            <option >室内</option>
+                            <option >区内</option>
+                            <option >市内</option>
+                        </select></li>
+                        <li>网站更新</li>
+                        <li>
+                            <a class="editor" href="javascript:"></a>
+                            <a class="save" href="javascript:"></a>
+                            <a class="delete" href="javascript:"></a>
+
+                        </li>
+                    </ul>
+                </div>
+                <div class="result">
+                    <input style="display: none" title="编辑模式" value=0>
+                    <ul >
+                        <li class="first-checkbox"><input type="checkbox" title="checkbox" ></li>
+                        <li class="resultid" >2018030210</li>
+                        <li class="reaultdate" >2018-01-29</li>
+                        <li class="resultresourse">完成</li>
+                        <li class="resultsourse" >区内</li>
+                        <li>网站更新</li>
+                        <li>
+                            <a class="editor" href="javascript:" title="编辑"></a>
+                            <a class="save" href="javascript:" title="保存"></a>
+                            <a class="delete" href="javascript:" title="删除"></a>
+                        </li>
+                    </ul>
+                    <ul  style="display: none">
+                        <li class="first-checkbox"><input type="checkbox" title="checkbox" ></li>
+                        <li class="resultid">
+                            <input title="事件编号" class="main-searchinput" type="text" >
+                        </li>
+                        <li class="reaultdate">
+                            <input title="事发时间" class="main-searchinput" type="date" >
+                        </li>
+                        <li class="resultresourse"><select title="事件状态" class="main-searchinput"  >
+                            <option value=""></option>
+                            <option >上报</option>
+                            <option >下发</option>
+                            <option >审批</option>
+                            <option>完成</option>
+                        </select></li>
+                        <li class="resultsourse"><select title="事件来源" class="main-searchinput"  >
+                            <option value="" ></option>
+                            <option >室内</option>
+                            <option >区内</option>
+                            <option >市内</option>
+                        </select></li>
+                        <li>网站更新</li>
+                        <li>
+                            <a class="editor" href="javascript:"></a>
+                            <a class="save" href="javascript:"></a>
+                            <a class="delete" href="javascript:"></a>
+
+                        </li>
+                    </ul>
+                </div>
+                <div class="result">
+                    <input style="display: none" title="编辑模式" value=0>
+                    <ul >
+                        <li class="first-checkbox"><input type="checkbox" title="checkbox" ></li>
+                        <li class="resultid" >2018030210</li>
+                        <li class="reaultdate" >2018-01-29</li>
+                        <li class="resultresourse">完成</li>
+                        <li class="resultsourse" >区内</li>
+                        <li>网站更新</li>
+                        <li>
+                            <a class="editor" href="javascript:" title="编辑"></a>
+                            <a class="save" href="javascript:" title="保存"></a>
+                            <a class="delete" href="javascript:" title="删除"></a>
+                        </li>
+                    </ul>
+                    <ul  style="display: none">
+                        <li class="first-checkbox"><input type="checkbox" title="checkbox" ></li>
+                        <li class="resultid">
+                            <input title="事件编号" class="main-searchinput" type="text" >
+                        </li>
+                        <li class="reaultdate">
+                            <input title="事发时间" class="main-searchinput" type="date" >
+                        </li>
+                        <li class="resultresourse"><select title="事件状态" class="main-searchinput"  >
+                            <option value=""></option>
+                            <option >上报</option>
+                            <option >下发</option>
+                            <option >审批</option>
+                            <option>完成</option>
+                        </select></li>
+                        <li class="resultsourse"><select title="事件来源" class="main-searchinput"  >
+                            <option value="" ></option>
+                            <option >室内</option>
+                            <option >区内</option>
+                            <option >市内</option>
+                        </select></li>
+                        <li>网站更新</li>
+                        <li>
+                            <a class="editor" href="javascript:"></a>
+                            <a class="save" href="javascript:"></a>
+                            <a class="delete" href="javascript:"></a>
+
+                        </li>
+                    </ul>
+                </div>
+                <div class="result">
+                    <input style="display: none" title="编辑模式" value=0>
+                    <ul >
+                        <li class="first-checkbox"><input type="checkbox" title="checkbox" ></li>
+                        <li class="resultid" >2018030210</li>
+                        <li class="reaultdate" >2018-01-29</li>
+                        <li class="resultresourse">完成</li>
+                        <li class="resultsourse" >区内</li>
+                        <li>网站更新</li>
+                        <li>
+                            <a class="editor" href="javascript:" title="编辑"></a>
+                            <a class="save" href="javascript:" title="保存"></a>
+                            <a class="delete" href="javascript:" title="删除"></a>
+                        </li>
+                    </ul>
+                    <ul  style="display: none">
+                        <li class="first-checkbox"><input type="checkbox" title="checkbox" ></li>
+                        <li class="resultid">
+                            <input title="事件编号" class="main-searchinput" type="text" >
+                        </li>
+                        <li class="reaultdate">
+                            <input title="事发时间" class="main-searchinput" type="date" >
+                        </li>
+                        <li class="resultresourse"><select title="事件状态" class="main-searchinput"  >
+                            <option value=""></option>
+                            <option >上报</option>
+                            <option >下发</option>
+                            <option >审批</option>
+                            <option>完成</option>
+                        </select></li>
+                        <li class="resultsourse"><select title="事件来源" class="main-searchinput"  >
+                            <option value="" ></option>
+                            <option >室内</option>
+                            <option >区内</option>
+                            <option >市内</option>
+                        </select></li>
+                        <li>网站更新</li>
+                        <li>
+                            <a class="editor" href="javascript:"></a>
+                            <a class="save" href="javascript:"></a>
+                            <a class="delete" href="javascript:"></a>
+
+                        </li>
+                    </ul>
+                </div>
+                <div class="result">
+                    <input style="display: none" title="编辑模式" value=0>
+                    <ul >
+                        <li class="first-checkbox"><input type="checkbox" title="checkbox" ></li>
+                        <li class="resultid" >2018030210</li>
+                        <li class="reaultdate" >2018-01-29</li>
+                        <li class="resultresourse">完成</li>
+                        <li class="resultsourse" >区内</li>
+                        <li>网站更新</li>
+                        <li>
+                            <a class="editor" href="javascript:" title="编辑"></a>
+                            <a class="save" href="javascript:" title="保存"></a>
+                            <a class="delete" href="javascript:" title="删除"></a>
+                        </li>
+                    </ul>
+                    <ul  style="display: none">
+                        <li class="first-checkbox"><input type="checkbox" title="checkbox" ></li>
+                        <li class="resultid">
+                            <input title="事件编号" class="main-searchinput" type="text" >
+                        </li>
+                        <li class="reaultdate">
+                            <input title="事发时间" class="main-searchinput" type="date" >
+                        </li>
+                        <li class="resultresourse"><select title="事件状态" class="main-searchinput"  >
+                            <option value=""></option>
+                            <option >上报</option>
+                            <option >下发</option>
+                            <option >审批</option>
+                            <option>完成</option>
+                        </select></li>
+                        <li class="resultsourse"><select title="事件来源" class="main-searchinput"  >
+                            <option value="" ></option>
+                            <option >室内</option>
+                            <option >区内</option>
+                            <option >市内</option>
+                        </select></li>
+                        <li>网站更新</li>
+                        <li>
+                            <a class="editor" href="javascript:"></a>
+                            <a class="save" href="javascript:"></a>
+                            <a class="delete" href="javascript:"></a>
+
+                        </li>
+                    </ul>
+                </div>
+                <div class="result">
+                    <input style="display: none" title="编辑模式" value=0>
+                    <ul >
+                        <li class="first-checkbox"><input type="checkbox" title="checkbox" ></li>
+                        <li class="resultid" >2018030210</li>
+                        <li class="reaultdate" >2018-01-29</li>
+                        <li class="resultresourse">完成</li>
+                        <li class="resultsourse" >区内</li>
+                        <li>网站更新</li>
+                        <li>
+                            <a class="editor" href="javascript:" title="编辑"></a>
+                            <a class="save" href="javascript:" title="保存"></a>
+                            <a class="delete" href="javascript:" title="删除"></a>
+                        </li>
+                    </ul>
+                    <ul  style="display: none">
+                        <li class="first-checkbox"><input type="checkbox" title="checkbox" ></li>
+                        <li class="resultid">
+                            <input title="事件编号" class="main-searchinput" type="text" >
+                        </li>
+                        <li class="reaultdate">
+                            <input title="事发时间" class="main-searchinput" type="date" >
+                        </li>
+                        <li class="resultresourse"><select title="事件状态" class="main-searchinput"  >
+                            <option value=""></option>
+                            <option >上报</option>
+                            <option >下发</option>
+                            <option >审批</option>
+                            <option>完成</option>
+                        </select></li>
+                        <li class="resultsourse"><select title="事件来源" class="main-searchinput"  >
+                            <option value="" ></option>
+                            <option >室内</option>
+                            <option >区内</option>
+                            <option >市内</option>
+                        </select></li>
+                        <li>网站更新</li>
+                        <li>
+                            <a class="editor" href="javascript:"></a>
+                            <a class="save" href="javascript:"></a>
+                            <a class="delete" href="javascript:"></a>
+
+                        </li>
+                    </ul>
+                </div>
+
+
+
+
+            </div>
+
+        </div>
+    </div>
+    <div id="foot">
+
+    </div>
+</div>
+
+
+
+
+</body>
+<script src="myjs.js"></script>
+</html>

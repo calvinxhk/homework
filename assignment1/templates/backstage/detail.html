@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ data.name }} 的详细资料</title>
+    <link rel="stylesheet" href="/static/plugins/bootstrap-3.3.7-dist/css/bootstrap.css">
+    <link rel="icon" href="/static/images/icon.jpg">
+</head>
+<body>
+<div class="col-lg-2"></div>
+<div class="col-lg-8">
+    <h1>个人详细信息</h1>
+    <table class="table table-bordered table-hover">
+        <thead>
+        <tr>
+            <td>id</td>
+            <td>name</td>
+            <td>nickname</td>
+            <td>phone</td>
+            <td>email</td>
+            <td>头像</td>
+            <td>会员等级</td>
+        </tr>
+        </thead>
+        <tbody>
+            <tr >
+                <td>{{ data.uid }}</td>
+                <td>{{ data.name }}</td>
+                <td>{{ data.nickname }}</td>
+                <td>{{ data.phone }}</td>
+                <td>{{ data.email }}</td>
+                <td><img src="/{{ data.avatar }}" class="img-circle img-responsive" style="width: 200px;height: 200px"></td>
+                <td>{{ data.get_group_display }}</td>
+        </tr>
+        </tbody>
+
+    </table>
+    <table class="table table-bordered table-hover">
+
+
+
+
+
+    </table>
+
+
+
+</div>
+<div class="col-lg-2"></div>
+</body>
+
+<script></script>
+</html>

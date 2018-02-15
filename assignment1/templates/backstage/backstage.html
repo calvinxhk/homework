@@ -1,0 +1,49 @@
+{% extends 'backstage/backblock.html' %}
+
+{% block css%}
+    <style>
+    .standard{width: 140px}
+    </style>
+{% endblock %}
+
+{% block html %}
+
+
+    <div style="width: 100%;height:50px">
+
+        <ul class="nav nav-tabs">
+            <li role="presentation"><a ><input type="checkbox"></a></li>
+            <li role="presentation"><a class="standard">id</a></li>
+            <li role="presentation"><a class="standard">用户名</a></li>
+             <li role="presentation"><a class="standard">手机</a></li>
+
+        </ul>
+    </div>
+
+    {% for row in page.object_list %}
+        <div style="width: 100%;height:50px">
+             <ul class="nav nav-tabs">
+                <li role="presentation"><a ><input type="checkbox" class="mycheck"></a></li>
+                <li role="presentation"><a class="standard" >{{ row.uid }}</a></li>
+                <li role="presentation"><a class="standard">{{ row.name }}</a></li>
+                 <li role="presentation"><a class="standard" >{{ row.phone }}</a></li>
+                 <li role="presentation"><a href="/admin/detail/{{ row.uid }}.html" class="standard">查看详情</a></li>
+            </ul>
+        </div>
+
+    {% endfor %}
+    <div>
+        <ul class="nav nav-tabs">
+            {% for row in page.page_list %}
+                    <li role="presentation">{{ row|safe }}</li>
+            {% endfor %}
+         </ul>
+    </div>
+    <div style="width: 100%;height: 300px"></div>
+
+{% endblock %}
+
+
+{% block js%}
+
+{% endblock %}

@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="前端练习">
+    <meta name="description" content="根据天猫版面综合设计的简化商城界面">
+    <meta name="author" content="邢怀康">
+    <title>邢怀康模仿的天猫商城</title>
+    <link rel="icon" href="image/天猫图标.png">
+    <link type="text/css" rel="stylesheet" href="mycss.css">
+    <script src="jquery-3.2.1.js"></script>
+
+</head>
+<body>
+    <div class="main-content">
+        <div class="header">
+            <div class="header1">
+                <span>喵，欢迎来到邢怀康的天猫</span>
+                <span><a href="javascript:">请登录</a></span>
+                <span><a href="javascript:">免费注册</a></span>
+            </div>
+            <ul class="header2-login">
+                    <li><a href="javascript:">我的淘宝</a></li>
+                    <li><i class="iconfont " >&#xe77c</i> <a href="javascript:">购物车</a></li>
+                    <li><a href="javascript:">收藏夹</a></li>
+                    <li>|</li>
+                    <li><i class="iconfont ">&#xe624</i><a href="javascript:">手机版</a></li>
+                    <li><a href="javascript:">淘宝网</a></li>
+                    <li><a href="javascript:">商家支持</a></li>
+                    <li><i class="iconfont">&#xe74c</i> <a href="javascript:">网站导航</a></li>
+                </ul>
+
+        </div>
+        <div class="cebian">
+            <div class="cebian1" id="cebian1"><a href="javascript:" title="会员利益"><i class=iconfont>&#xe658</i></a></div>
+            <div class="cebian2"><a href="javascript:" title="购物车"><i class=iconfont>&#xe691</i><br>购<br>物<br>车</a></div>
+            <div class="cebian2"><a href="javascript:"><i class=iconfont>&#xe6d0</i></a></div>
+            <div class="cebian2"><a href="javascript:"><i class=iconfont>&#xe6b4</i></a></div>
+            <div class="cebian2"><a href="javascript:"><i class=iconfont>&#xe690</i></a></div>
+            <div class="cebian2"><a href="javascript:" title="这是内衣不是眼镜"><i class=iconfont>&#xe696</i></a></div>
+            <div class="cebian2"><a href="javascript:"><i class=iconfont>&#xe6de</i></a></div>
+            <div class="cebian2"><a href="javascript:"><i class=iconfont>&#xe6e4</i></a></div>
+
+        </div>
+        <div class="search">
+            <div id="logo"><a href="javascript:"></a></div>
+            <div id="search-right">
+                <div id="search-in">
+                    <form>
+                        <input type="text" id="search-input" title="请输入搜索文字">
+
+                        <button id="search-button">搜索</button>
+                        <label for="search-input" id="label">搜索 天猫 商品/品牌/店铺</label>
+                    </form>
+                    <ul id="hotwords">
+                        <li><a href="javascript:">针织衫</a> </li>
+                        <li><a href="javascript:">羽绒服</a> </li>
+                        <li><a href="javascript:">四件套</a> </li>
+                        <li><a href="javascript:">电动牙刷</a> </li>
+                        <li><a href="javascript:">客厅灯</a> </li>
+                        <li><a href="javascript:" >口红</a> </li>
+                    </ul>
+                </div>
+
+
+
+            </div>
+
+        </div>
+        <div class="list">
+            <div class="guide-list">
+                <ul id="first">
+                    <li id="list-first"><i class="iconfont">&#xe6c8</i><a href="javascript:">商品分类</a></li>
+                    <li class="guide-list-first">
+                        <i class="iconfont">&#xe638</i>
+                        <a href="javascript:">男装/户外运动</a>
+                        <ul class="second-floor">
+                            <li class="guide-list-second">西装</li>
+                            <li class="guide-list-second">西装</li>
+                            <li class="guide-list-second">西装</li>
+                            <li class="guide-list-second">西装</li>
+                            <li class="guide-list-second">西装</li>
+                            <li class="guide-list-second">西装</li>
+                        </ul>
+
+                    </li>
+                    <li class="guide-list-first">
+                        <i class="iconfont">&#xe639</i>
+                        <a href="javascript:">女鞋/男鞋/箱包</a>
+                        <ul class="second-floor">
+                            <li class="guide-list-second">连衣裙</li>
+                            <li class="guide-list-second">连衣裙</li>
+                            <li class="guide-list-second">连衣裙</li>
+                            <li class="guide-list-second">连衣裙</li>
+                            <li class="guide-list-second">连衣裙</li>
+                            <li class="guide-list-second">连衣裙</li>
+                        </ul>
+
+                    </li>
+                    <li class="guide-list-first">
+                        <i class="iconfont">&#xe64f</i>
+                        <a href="javascript:">美妆/个人护理</a>
+                        <ul class="second-floor">
+                            <li class="guide-list-second">高跟鞋</li>
+                            <li class="guide-list-second">高跟鞋</li>
+                            <li class="guide-list-second">高跟鞋</li>
+                            <li class="guide-list-second">高跟鞋</li>
+                            <li class="guide-list-second">高跟鞋</li>
+                            <li class="guide-list-second">高跟鞋</li>
+                        </ul>
+                    </li>
+                    <li class="guide-list-first">
+                        <i class="iconfont">&#xe61f</i>
+                        <a href="javascript:">腕表/眼镜/珠宝饰品</a>
+                        <ul class="second-floor">
+                            <li class="guide-list-second" >劳力士</li>
+                            <li class="guide-list-second">劳力士</li>
+                            <li class="guide-list-second">劳力士</li>
+                            <li class="guide-list-second">劳力士</li>
+                            <li class="guide-list-second">劳力士</li>
+                            <li class="guide-list-second">劳力士</li>
+                        </ul>
+
+                    </li>
+                    <li class="guide-list-first">
+                        <i class="iconfont">&#xe624</i>
+                        <a href="javascript:">手机/数码/电脑办公</a>
+                        <ul class="second-floor">
+                            <li class="guide-list-second">爱疯X</li>
+                            <li class="guide-list-second">爱疯X</li>
+                            <li class="guide-list-second">爱疯X</li>
+                            <li class="guide-list-second" >爱疯X</li>
+                            <li class="guide-list-second">爱疯X</li>
+                            <li class="guide-list-second">爱疯X</li></ul>
+                    </li>
+                    <li class="guide-list-first">
+                        <i class="iconfont">&#xe623</i>
+                        <a href="javascript:">母婴玩具</a>
+                        <ul class="second-floor">
+                            <li class="guide-list-second">玩具</li>
+                            <li class="guide-list-second">玩具</li>
+                            <li class="guide-list-second">玩具</li>
+                            <li  class="guide-list-second">玩具</li>
+                            <li class="guide-list-second">玩具</li>
+                            <li class="guide-list-second">玩具</li></ul>
+
+                    </li>
+                    <li class="guide-list-first">
+                        <i class="iconfont">&#xe622</i>
+                        <a href="javascript:">零食/茶酒/进口食品</a>
+                        <ul class="second-floor">
+                            <li class="guide-list-second">鸡腿</li>
+                            <li class="guide-list-second">鸡腿</li>
+                            <li class="guide-list-second">鸡腿</li>
+                            <li class="guide-list-second">鸡腿</li>
+                            <li class="guide-list-second">鸡腿</li>
+                            <li class="guide-list-second">鸡腿</li></ul>
+
+                    </li>
+                    <li class="guide-list-first">
+                        <i class="iconfont">&#xe651</i>
+                        <a href="javascript:">生鲜水果</a>
+
+                        <div class="second-floor">
+                            <ul id="second8">
+                                <li class="guide-list-second">西瓜</li>
+                                <li class="guide-list-second">西瓜</li>
+                                <li class="guide-list-second">西瓜</li>
+                                <li class="guide-list-second">西瓜</li>
+                                <li class="guide-list-second">西瓜</li>
+                                <li class="guide-list-second">西瓜</li></ul>
+                        </div></li>
+                    <li class="guide-list-first">
+                        <i class="iconfont">&#xe621</i>
+                        <a href="javascript:">大家电/生活电器</a>
+
+                        <ul class="second-floor">
+                            <li class="guide-list-second">空调</li>
+                            <li class="guide-list-second">空调</li>
+                            <li class="guide-list-second">空调</li>
+                            <li class="guide-list-second">空调</li>
+                            <li class="guide-list-second">空调</li>
+                            <li class="guide-list-second">空调</li></ul>
+                    </li>
+                    <li class="guide-list-first"><i class="iconfont">&#xe620</i><a href="javascript:">家居建材</a>
+                        <div class="second-floor">
+                        <ul id="second10"><li>玩具</li>
+                            <li>玩具</li>
+                            <li>玩具</li>
+                            <li>玩具</li>
+                            <li>玩具</li>
+                            <li>玩具</li></ul>
+                    </div></li>
+                    <li class="guide-list-first"><i class="iconfont">&#xe629</i><a href="javascript:">汽车/配件/用品</a>
+                        <div class="second-floor">
+                        <ul id="second11"><li>玩具</li>
+                            <li>玩具</li>
+                            <li>玩具</li>
+                            <li>玩具</li>
+                            <li>玩具</li>
+                            <li>玩具</li></ul>
+                    </div></li>
+                    <li class="guide-list-first"><i class="iconfont">&#xe62a</i><a href="javascript:">家纺/家饰/鲜花</a>
+                        <div class="second-floor">
+                        <ul id="second12"><li>玩具</li>
+                            <li>玩具</li>
+                            <li>玩具</li>
+                            <li>玩具</li>
+                            <li>玩具</li>
+                            <li>玩具</li></ul>
+                    </div></li>
+                    <li class="guide-list-first"><i class="iconfont">&#xe62c</i><a href="javascript:">医药保健</a>
+                        <div class="second-floor">
+                        <ul id="second13"><li>玩具</li>
+                            <li>玩具</li>
+                            <li>玩具</li>
+                            <li>玩具</li>
+                            <li>玩具</li>
+                            <li>玩具</li></ul>
+                    </div></li>
+                    <li class="guide-list-first"><i class="iconfont">&#xe60c</i><a href="javascript:">厨具/收纳/宠物</a>
+                        <div class="second-floor">
+                        <ul id="second14"><li>玩具</li>
+                            <li>玩具</li>
+                            <li>玩具</li>
+                            <li>玩具</li>
+                            <li>玩具</li>
+                            <li>玩具</li></ul>
+                    </div></li>
+                    <li class="guide-list-first"><i class="iconfont">&#xe615</i><a href="javascript:">图书音像</a>
+                        <div class="second-floor">
+                        <ul id="second15"><li>最后</li>
+                            <li>玩具</li>
+                            <li>玩具</li>
+                            <li>玩具</li>
+                            <li>玩具</li>
+                            <li>玩具</li></ul>
+                    </div></li>
+
+                </ul></div>
+
+            <div class="guide-title">
+                <ul class="second">
+                    <li><a href="javascript:"><img src="image/天猫超市.png" ></a></li>
+                    <li><a href="javascript:"><img src="image/天猫国际.png"></a></li>
+                    <li><a href="javascript:">天猫会员</a> </li>
+                    <li><a href="javascript:">电器城</a></li>
+                    <li><a href="javascript:">喵鲜生</a></li>
+                    <li><a href="javascript:">医药馆</a></li>
+                    <li><a href="javascript:">营业厅</a></li>
+                    <li><a href="javascript:">魅力惠</a></li>
+                    <li><a href="javascript:">飞猪旅行</a></li>
+                    <li><a href="javascript:">苏宁易购</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="lunbo">
+            <div class="img">
+                <img class="lunbo-img" src="image/轮播图1.webp" style="display: block">
+                <img class="lunbo-img" src="image/轮播2.jpg">
+                <img class="lunbo-img" src="image/轮播图3.webp">
+                <img class="lunbo-img" src="image/轮播图4.jpg">
+                <img class="lunbo-img" src="image/轮播图5.jpg">
+                <img class="lunbo-img" src="image/轮播图6.jpg">
+            </div>
+            <div class="bottom-icon">
+                <ul>
+                    <li class="lunbo-foot" style="background: white"><a href="javascript:"></a> </li>
+                    <li class="lunbo-foot"><a href="javascript:"></a></li>
+                    <li class="lunbo-foot"><a href="javascript:"></a></li>
+                    <li class="lunbo-foot"><a href="javascript:"></a></li>
+                    <li class="lunbo-foot"><a href="javascript:"></a></li>
+                    <li class="lunbo-foot"><a href="javascript:"></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="goods-list">
+            <div class="goods-list-head">
+                <div class="goods-list-logo">
+                    <a href="javascript:"><img src="image/demologo.png"></a></div>
+                <div class="goods-list-intro">
+                    <ul>
+                        <li>口红</li>
+                        <li>YSL</li>
+                        <li>面膜</li>
+                        <li>防晒</li>
+                        <li>迪奥</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="goods-list-body">
+                <div class="goods-list-pic">
+                    <a href="商品界面.html"><img src="image/demopic.jpg"></a>
+                </div>
+                <div class="goods-list-list">
+                    <div class="goods-list-goodpic">
+                        <a href="商品界面.html"><img src="image/good1.jpg">
+                        <div class="goodname">机械机器键盘加鼠标耳机三件套装牧马人吃鸡电脑游戏键鼠台式外设</div>
+                        <div class="goodprice">￥159</div></a>
+                    </div>
+                    <div class="goods-list-goodpic">
+                        <a href="商品界面.html"><img src="image/good2.jpg">
+                        <div class="goodname">纽曼 R1室内家用无线蓝牙定阻天花吊顶吸顶喇叭音响功放杜比套装</div>
+                        <div class="goodprice">￥368</div></a></div>
+                    <div class="goods-list-goodpic">
+                        <a href="商品界面.html"><img src="image/good3.jpg">
+                        <div class="goodname">FANBIYA 无线蓝牙耳机iPhone7/8plus双耳苹果入耳式耳塞运动耳机X</div>
+                        <div class="goodprice">￥158</div></a>
+                    </div>
+
+
+                    <div class="goods-list-goodpic">
+                        <a href="商品界面.html"><img src="image/good4.jpg">
+                        <div class="goodname">进化者智能机器人小胖标准版1-6年级人教版课程辅导高清健康投影</div>
+                        <div class="goodprice">￥14888</div></a>
+                    </div>
+
+                    <div class="goods-list-goodpic">
+                        <a href="商品界面.html"><img src="image/good5.jpg"></a>
+                        <div class="goodname">Amoi/夏新 N3麦克风手机全民k歌神器苹果安卓专用直播话筒设备</div>
+                        <div class="goodprice">￥59</div>
+                    </div>
+
+                    <div class="goods-list-goodpic">
+                        <a href="商品界面.html"><img src="image/good6.jpg">
+                        <div class="goodname">迪士尼正版复仇者联盟8G优盘 钢铁侠/雷神/美国队长 漫威u盘包邮</div>
+                        <div class="goodprice">￥98</div></a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="goods-list">
+            <div class="goods-list-head">
+                <div class="goods-list-logo">
+                    <a href="javascript:"><img src="image/demologo.png"></a></div>
+                <div class="goods-list-intro">
+                    <ul>
+                        <li>口红</li>
+                        <li>YSL</li>
+                        <li>面膜</li>
+                        <li>防晒</li>
+                        <li>迪奥</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="goods-list-body">
+                <div class="goods-list-pic">
+                    <a><img src="image/demopic.jpg"></a>
+                </div>
+                <div class="goods-list-list">
+                    <div class="goods-list-goodpic">
+                        <a><img src="image/good1.jpg"></a>
+                        <div class="goodname">机械机器键盘加鼠标耳机三件套装牧马人吃鸡电脑游戏键鼠台式外设</div>
+                        <div class="goodprice">￥159</div>
+                    </div>
+                    <div class="goods-list-goodpic">
+                        <a><img src="image/good2.jpg"></a>
+                        <div class="goodname">纽曼 R1室内家用无线蓝牙定阻天花吊顶吸顶喇叭音响功放杜比套装</div>
+                        <div class="goodprice">￥368</div></div>
+                    <div class="goods-list-goodpic">
+                        <a><img src="image/good3.jpg"></a>
+                        <div class="goodname">FANBIYA 无线蓝牙耳机iPhone7/8plus双耳苹果入耳式耳塞运动耳机X</div>
+                        <div class="goodprice">￥158</div></div>
+
+
+                    <div class="goods-list-goodpic">
+                        <a><img src="image/good4.jpg"></a>
+                        <div class="goodname">进化者智能机器人小胖标准版1-6年级人教版课程辅导高清健康投影</div>
+                        <div class="goodprice">￥14888</div>
+                    </div>
+
+                    <div class="goods-list-goodpic">
+                        <a><img src="image/good5.jpg"></a>
+                        <div class="goodname">Amoi/夏新 N3麦克风手机全民k歌神器苹果安卓专用直播话筒设备</div>
+                        <div class="goodprice">￥59</div>
+                    </div>
+
+                    <div class="goods-list-goodpic">
+                        <a><img src="image/good6.jpg"></a>
+                        <div class="goodname">迪士尼正版复仇者联盟8G优盘 钢铁侠/雷神/美国队长 漫威u盘包邮</div>
+                        <div class="goodprice">￥98</div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="user-login-mask">
+        <div class="content-list">
+            <div class="box-login">
+                <div class="left">
+                    <div class="header">登录</div>
+                    <div class="body-login">
+                        <div class="tab-box">
+                            <span id="phone-login">手机号登录</span>|
+                            <span id="user-login" style="color:blue">用户名登录</span>
+                        </div>
+                        <div class="phone-login">
+                            <div class="part1">
+                                <div>
+                                    <select title="区号" name="区号">
+                                        <option>中国（+86）</option>
+                                        <option>中国香港（+852）</option>
+                                        <option>日本（+81）</option>
+                                        <option>新加坡（+65）</option>
+                                    </select>
+                                </div>
+                                <form>
+                                    <div class="pr"><input id="phoneLogin" type="text" name="phone" placeholder="手机号"></div>
+                                    <div class="pr"><input id="phonePassword" type="password" name="phone" placeholder="密码"></div>
+                                </form>
+                            </div>
+                            <div>
+                                <div style="font-size:12px;margin:20px 20px;text-align:center">
+                                    <span ><input title="自动登录" type="checkbox" checked>一个月内自动登录</span>
+                                    <span><a href="javascript:">忘记密码？</a></span>
+                                </div>
+                                <div style="text-align:center">
+                                    <button id="phoneButton" class="login" >登录</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="id-login">
+                            <div class="part1">
+                                <form>
+                                    <div class="pr"><input  id="IdUser" type="text" name="phone" placeholder="用户名"></div>
+                                    <div class="pr"><input id="Idpassword" type="password" name="phone" placeholder="密码"></div>
+                                </form>
+                            </div>
+                            <div style="font-size:12px;margin:20px 20px;text-align:center">
+                                <span ><input title="自动登录" type="checkbox" checked>一个月内自动登录</span>
+                                <span><a href="javascript:">忘记密码？</a></span>
+                            </div>
+                            <div style="text-align:center">
+                                <button class="login" id="IdBotton">登录</button>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="header">注册</div>
+                    <div class="body-register">
+                        <div class="tab-box">
+                            <span class="step1" style="color:blue">1 填写手机号</span>>
+                            <span class="step2">2 填写基本资料</span>
+                        </div>
+                        <div class="step1">
+                            <div style="padding:0 70px">
+                                <div>
+                                    <select title="区号" name="区号">
+                                        <option>中国（+86）</option>
+                                        <option>中国香港（+852）</option>
+                                        <option>日本（+81）</option>
+                                        <option>新加坡（+65）</option>
+                                    </select>
+                                </div>
+
+
+                                    <div class="pr">
+                                        <input type="text" name="phone" placeholder="手机号" style="width:120px">
+                                        <button class="sid"  >验证码</button>
+                                    </div>
+                                    <div style="font-size:12px">
+                                        <span>获取不到短信？</span>
+                                        <a href="javascript:" style="color: #015e98">获取语音验证码</a>
+                                    </div>
+                                    <div class="pr"><input type="text" name="phone" placeholder="验证码"></div>
+                                    <div class="pr"><input type="text" name="phone" placeholder="密码"></div>
+
+
+                                <div ><button class="login">下一步</button></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="exit" style="cursor:pointer"></div>
+            </div>
+        </div>
+    </div>
+<script src="myscript.js"></script>
+
+
+</body>
+</html>

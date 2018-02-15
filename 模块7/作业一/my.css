@@ -1,0 +1,26 @@
+ body{background-color:#f0f3ef}
+a {text-decoration:none}
+a:link{color:black}
+a:visited{color:black}
+a:active{color:red}
+#header{width:100%;height:50px; margin:0px; background-color:#F1F1F1;text-align:center;display:block;overflow:hidden;}
+#header ul {list-style-type:none}
+#header li {border-right: 1px solid #bbb;padding:10px 20px;display:inline}
+#logo {float:left;width:190px;height:170px}
+#logo a {display:block;overflow:hidden;
+width:190px;height:170px;background-image:url(icon.png);background-position:0 0;text-indent: -999px;}
+#search{height:170px;position:relative;}
+#search input{color:rgb(153, 153, 153);width:340px;height:25px;border:1px solid transparent;position:absolute;left:500px;top:100px}
+#search button{margin:0;width:50px;height:30px;position:absolute;left:800px;top:100px;background-image:url(3.png)}
+#search .hotwords{position:absolute;bottom:10px;left:500px}
+#search a {margin:5px}
+#list {border:1px solid transparent;width:150px;height:500px;float:left}
+#list ul{list-style-type:none;padding:10px}
+#list li{padding:5px}
+#lunbo {width:1200px;position:relative}
+#lunbo img {position:absolute;left:400px;top:20px}
+table {width:100%;height:500px}
+tr,td {padding:0;margin:0}
+table img {width:200px}
+
+

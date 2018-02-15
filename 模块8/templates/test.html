@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="/static/plugins/jquery-3.2.1.js"></script>
+    <link rel="icon" href="/static/images/logo.jpg">
+</head>
+<body>
+    <form id="f1"  target="window" method="POST" ACTION="/test/test3/" enctype="multipart/form-data">
+        {% csrf_token %}
+     <input name="user" type="text" title="user">
+     <input name="password" type="password" title="password">
+     <input type="button" title="提交" value="ajax" onclick="test()">
+     <input type="button" title="提交" value="原生ajax" onclick="test1()">
+        <iframe name="window" id="window" style="width: 50%;height: 50%;position: fixed;left: 0;top: 150px"  ></iframe>
+        <a onclick="test2()">iframe 提交</a><br>
+        <div><input type="file" id="file" name="文件"><br></div>
+    <a onclick="test3()"> 文件上传原生ajax</a><br>
+        <a onclick="test4()"> 文件上传jquery</a><br>
+        <a onclick="test5()">伪造上传</a><br>
+        <a onclick="test6()">test</a>
+    <div id="result"></div>
+    </form>
+
+<script>
+    function test() {
+         $.ajax(
+        {
+            url:'/test/',
+            type:'POST',
+            data:$('#f1').serialize(),
+            dataType:'JSON',
+            success:function (arg) {
+                console.log(arg.answer,typeof arg)
+            }
+        }
+
+    )
+
+    }
+    function test1() {
+       var test =new XMLHttpRequest();
+
+       test.onreadystatechange=function () {
+        if (test.readyState === 4){
+            alert(test.responseText)
+        }
+       };
+       test.open('POST','/test1/');
+       test.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+       test.send('i=45&i2=78')
+    }
+    function test2() {
+       document.getElementById('window').onload= ifr;
+       document.getElementById('f1').submit();
+       function ifr() {
+        alert(
+            document.getElementById('window').contentWindow.document.body.innerText
+        )
+       }
+    }
+    function test3() {
+        var formdata = new FormData();
+        var target = document.getElementById('file').files[0];
+        formdata.append('name','xhk');
+        formdata.append('文件',target);
+        var test3 = new XMLHttpRequest();
+        test3.onreadystatechange =function () {
+            if(test3.readyState ===4){
+               function show() {
+                   var tag = document.createElement('img');
+                   tag.src='/'+test3.responseText;
+                   document.getElementById("result").appendChild(tag);
+
+               }
+               show()
+            }
+        };
+        test3.open('POST','/test3/');
+        test3.send(formdata)
+    }
+    function test4() {
+        var formdata = new FormData();
+        formdata.append('文件',$("#file")[0].files[0]);
+        $.ajax(
+            {
+                url:'/test3/',
+                type:'POST',
+                data:formdata,
+                contentType:false,
+                processData:false,
+                success:function (arg) {
+                     var tag = document.createElement('img');
+                   tag.src='/'+arg;
+                $('#result').append(tag)
+                    
+                }
+            }
+
+        )
+    }
+    function test5() {
+        var target = '';
+        $('#f1').submit();
+        var wind = document.getElementById("window");
+        wind.onload=function () {
+            if (target){return false}
+            else {
+                target = '/'+wind.contentWindow.document.body.innerText;
+                wind.src=target;
+            }
+
+        }
+
+
+
+
+    }
+    function test6() {
+        document.getElementById("window").src=target
+    }
+</script>
+
+</body>
+</html>

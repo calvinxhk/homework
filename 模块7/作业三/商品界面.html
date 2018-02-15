@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>邢怀康模拟的商品界面</title>
+    <meta name="keywords" content="前端练习">
+    <meta name="description" content="根据天猫版面综合设计的简化商品界面">
+    <link rel="stylesheet" type="text/css" href="mycss.css">
+    <link rel="icon" href="image/天猫图标.png">
+    <script src="jquery-3.2.1.js"></script>
+</head>
+<body>
+<div class="good-main-content" >
+    <div class="header">
+    <div class="header1">
+        <span>喵，欢迎来到邢怀康的天猫</span>
+        <span><a href="javascript:">请登录</a></span>
+        <span><a href="javascript:">免费注册</a></span>
+    </div>
+    <ul class="header2-login">
+        <li><a href="javascript:">我的淘宝</a></li>
+        <li><i class="iconfont " >&#xe77c</i> <a href="javascript:">购物车</a></li>
+        <li><a href="javascript:">收藏夹</a></li>
+        <li>|</li>
+        <li><i class="iconfont ">&#xe624</i><a href="javascript:">手机版</a></li>
+        <li><a href="javascript:">淘宝网</a></li>
+        <li><a href="javascript:">商家支持</a></li>
+        <li><i class="iconfont">&#xe74c</i> <a href="javascript:">网站导航</a></li>
+    </ul>
+
+</div>
+    <div class="cebian">
+        <div class="cebian1" id="cebian1"><a href="javascript:" title="会员利益"><i class=iconfont>&#xe658</i></a></div>
+        <div class="cebian2"><a href="javascript:" title="购物车" id="shoppingCar"><i id='shoppingCaricon' class=iconfont>&#xe691</i><br>购<br>物<br>车</a></div>
+        <div class="cebian2"><a href="javascript:"><i class=iconfont>&#xe6d0</i></a></div>
+        <div class="cebian2"><a href="javascript:"><i class=iconfont>&#xe6b4</i></a></div>
+        <div class="cebian2"><a href="javascript:"><i class=iconfont>&#xe690</i></a></div>
+        <div class="cebian2"><a href="javascript:" title="这是内衣不是眼镜"><i class=iconfont>&#xe696</i></a></div>
+        <div class="cebian2"><a href="javascript:"><i class=iconfont>&#xe6de</i></a></div>
+        <div class="cebian2"><a href="javascript:"><i class=iconfont>&#xe6e4</i></a></div>
+
+    </div>
+    <div class="search">
+        <div id="logo"><a href="javascript:"></a></div>
+        <div id="search-right">
+            <div id="search-in">
+                <form>
+                    <input type="text" id="search-input" title="请输入搜索文字">
+
+                    <button id="search-button">搜索</button>
+                    <label for="search-input" id="label">搜索 天猫 商品/品牌/店铺</label>
+                </form>
+                <ul id="hotwords">
+                    <li><a href="javascript:">针织衫</a> </li>
+                    <li><a href="javascript:">羽绒服</a> </li>
+                    <li><a href="javascript:">四件套</a> </li>
+                    <li><a href="javascript:">电动牙刷</a> </li>
+                    <li><a href="javascript:">客厅灯</a> </li>
+                    <li><a href="javascript:" >口红</a> </li>
+                </ul>
+            </div>
+
+
+
+        </div>
+
+    </div>
+    <div class="zhaopai">
+        <div id="zhaopaiHead">
+            <div id="zhaopai1" ></div>
+        </div>
+        <div id="zhaopaiBody" >
+
+        </div>
+    </div>
+    <div class="goodSituation">
+        <div id="goodpic">
+            <div id="bigpic">
+                <img id="bigpicpic" src="image/商品实图1.jpg" style="width: 420px;height: 420px">
+                <div id="picarea"></div>
+                <div id="showarea"></div>
+            </div>
+            <div id="smallpic">
+                <ul id="smallpicList">
+                    <li><img class="smallpicList" src="image/商品实图1.jpg"></li>
+                    <li><img class="smallpicList" src="image/商品实图2.jpg"></li>
+                    <li><img class="smallpicList" src="image/商品实图3.jpg"></li>
+                    <li><img class="smallpicList" src="image/商品实图4.jpg"></li>
+                    <li><img class="smallpicList" src="image/商品实图5.jpg"></li>
+                </ul>
+            </div>
+            <div id="goodfoot">
+                <span id="goodshare"><i class="iconfont">&#xe767</i>分享</span>
+                <span id="goodcollect"><i class="iconfont">&#xe6f7</i>收藏商品（723人气）</span>
+                <span id="goodreport">举报</span>
+            </div>
+            <div id="advideo">
+                <video id="vid" src="vedio/test.mp4" controls="controls" width="500" height="360">您的浏览器不支持 HTML5 video 标签。</video>
+            </div>
+        </div>
+        <div id="goodinf">
+            <h2 >乐乐趣童书偷偷看里面系列4册动物的家 动物园 夜晚农场奇妙洞洞书0-3岁翻翻书幼婴儿游戏绘本启蒙认知好好玩儿童3d立体书科普书籍</h2>
+            <div id="goodbackground1">
+                <img id="goodinficon" src="image/年货节.png">
+                <span id="goodbackgroundtip">此商品1月24日开卖，请提前加入购物车</span>
+            </div>
+            <div id="goodbackground2">
+                <img id="goodinficon2" src="image/年货节logo2.png">
+                <span id="goodbackgroundtip2">领津贴每满300减40</span>
+                <span id="goodbackgroundtip3">领取</span>
+                <ul >
+                    <li><span class="goodtips">专柜价</span><span id="goodtips1" >¥ 171.20</span> </li>
+                    <li><span class="goodtips">促销价</span><span id="goodtips2" >¥ 111.20 </span><span id="goodtip4" >促销价<i id="goodtip4bottom" ></i></span> </li>
+                    <li><span class="goodtips">年货价</span><span  id="goodtips3" > ¥ 80.00</span></li>
+                    <li><span class="goodtips">运费</span>上海至 无锡<i class="iconfont" style="font-size: 12px">&#xe6fb</i>快递: 0.00</li>
+                </ul>
+            </div>
+            <ul id="gooddate">
+                <li>月销量 <span style="color: red;font-weight: bold">76</span></li>
+                <li>累计评价 <span style="color: red;font-weight: bold">231</span></li>
+                <li>送天猫积分 <span style="color: green;font-weight: bold">123</span></li>
+
+
+            </ul>
+            <div id="goodbanben">
+                <div class="goodbanbentitle">版本</div>
+
+                <ul id="banbenlist">
+                    <li>偷偷看里面</li>
+                    <li>小不点的触摸书</li>
+                    <li>生命立体书第四册</li>
+                    <li>噼里啪啦系列</li>
+                    <li>米菲双语绘本系列</li>
+                    <li>宝宝迷你历史书</li>
+                </ul>
+
+            </div>
+            <div id="goodamount">
+                <div class="goodbanbentitle">数量</div>
+                <div id="goodchoice">
+                    <input id="goodchoiceares" title="数量" type="text" placeholder="1">
+                    <button id="goodchoiceadd"><i class="iconfont">&#xe6fa</i></button>
+                    <button id="goodchoiceamin"><i class="iconfont">&#xe6fb</i></button>件
+                    <span>库存966件</span>
+                </div>
+                <div id="goodbuy">
+                    <a id="goodbuybutton1" href="javascript:">立即购买</a>
+                    <a id="goodbuybutton2" href="javascript:"><i class="iconfont" style="color: white">&#xe6aa</i> &nbsp;加入购物车 </a>
+                </div>
+                <ul id="goodcompromise">
+                    <li>服务承诺</li>
+                    <li>正品保证</li>
+                    <li>极速退款</li>
+                    <li>七天无理由退换</li>
+                    <li>支付方式<i class="iconfont">&#xe6fb</i> </li>
+                </ul>
+            </div>
+
+        </div>
+        <ul id="goodad">
+                <li id="goodadtitle">看了又看</li>
+                <li><div><img src="image/ad1.jpg"></div>
+                    <a>乐乐趣 偷偷看里面系列 动物园奇妙的洞洞书绘本 儿童3d立体书 婴幼儿0-3-6岁启蒙认知益智游戏玩具翻翻书 宝宝撕不烂早教故事书籍</a>
+                </li>
+                <li><div><img src="image/ad2.jpg"></div><a>乐乐趣 偷偷看里面系列奇妙的洞洞书 动物的家 科普百科知识大全3D立体书翻翻书 婴幼儿0-2-3-6岁启蒙益智游戏玩具撕不烂早教书籍</a>
+                </li>
+                <li><div><img src="image/ad3.jpg"></div><a>正版 点点点 精装蒲蒲兰绘本 幼儿早教认知启蒙故事图书 0-1-2-3-4-5-6周岁趣味绘本亲子共读游戏书籍</a>
+                </li>
+                <li><div><img src="image/ad4.jpg"></div><a>乐乐趣童书 偷偷看里面 第二辑花园 奇妙洞洞书0-3岁 翻翻书幼婴儿游戏绘本启蒙认知立体书3d立体书科普儿童书籍</a>
+                </li></ul>
+
+
+
+    </div>
+
+</div>
+<div class="user-login-mask">
+    <div class="content-list">
+        <div class="box-login">
+            <div class="left">
+                <div class="header">登录</div>
+                <div class="body-login">
+                    <div class="tab-box">
+                        <span id="phone-login">手机号登录</span>|
+                        <span id="user-login" style="color:blue">用户名登录</span>
+                    </div>
+                    <div class="phone-login">
+                        <div class="part1">
+                            <div>
+                                <select title="区号" name="区号">
+                                    <option>中国（+86）</option>
+                                    <option>中国香港（+852）</option>
+                                    <option>日本（+81）</option>
+                                    <option>新加坡（+65）</option>
+                                </select>
+                            </div>
+                            <form>
+                                <div class="pr"><input id="phoneLogin" type="text" name="phone" placeholder="手机号"></div>
+                                <div class="pr"><input id="phonePassword" type="password" name="phone" placeholder="密码"></div>
+                            </form>
+                        </div>
+                        <div>
+                            <div style="font-size:12px;margin:20px 20px;text-align:center">
+                                <span ><input title="自动登录" type="checkbox" checked>一个月内自动登录</span>
+                                <span><a href="javascript:">忘记密码？</a></span>
+                            </div>
+                            <div style="text-align:center">
+                                <button id="phoneButton" class="login" >登录</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="id-login">
+                        <div class="part1">
+                            <form>
+                                <div class="pr"><input  id="IdUser" type="text" name="phone" placeholder="用户名"></div>
+                                <div class="pr"><input id="Idpassword" type="password" name="phone" placeholder="密码"></div>
+                            </form>
+                        </div>
+                        <div style="font-size:12px;margin:20px 20px;text-align:center">
+                            <span ><input title="自动登录" type="checkbox" checked>一个月内自动登录</span>
+                            <span><a href="javascript:">忘记密码？</a></span>
+                        </div>
+                        <div style="text-align:center">
+                            <button class="login" id="IdBotton">登录</button>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+            <div class="right">
+                <div class="header">注册</div>
+                <div class="body-register">
+                    <div class="tab-box">
+                        <span class="step1" style="color:blue">1 填写手机号</span>>
+                        <span class="step2">2 填写基本资料</span>
+                    </div>
+                    <div class="step1">
+                        <div style="padding:0 70px">
+                            <div>
+                                <select title="区号" name="区号">
+                                    <option>中国（+86）</option>
+                                    <option>中国香港（+852）</option>
+                                    <option>日本（+81）</option>
+                                    <option>新加坡（+65）</option>
+                                </select>
+                            </div>
+
+
+                            <div class="pr">
+                                <input type="text" name="phone" placeholder="手机号" style="width:120px">
+                                <button class="sid"  >验证码</button>
+                            </div>
+                            <div style="font-size:12px">
+                                <span>获取不到短信？</span>
+                                <a href="javascript:" style="color: #015e98">获取语音验证码</a>
+                            </div>
+                            <div class="pr"><input type="text" name="phone" placeholder="验证码"></div>
+                            <div class="pr"><input type="text" name="phone" placeholder="密码"></div>
+
+
+                            <div ><button class="login">下一步</button></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="exit" style="cursor:pointer"></div>
+        </div>
+    </div>
+</div>
+</body>
+<script src="myscript.js"></script>
+</html>

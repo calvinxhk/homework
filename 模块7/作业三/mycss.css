@@ -1,0 +1,135 @@
+* {margin: 0;padding:0;font-size: 14px;color:#666;text-decoration: none;list-style-type: none}
+body{background: #f5f5f5;width: 100%;height: 100%;overflow-x: hidden}
+a:hover {color: deeppink}
+@font-face {font-family: 'iconfont';
+    src: url('font/iconfont.eot');
+    src: url('font/iconfont.eot?#iefix') format('embedded-opentype'),
+    url('font/iconfont.woff') format('woff'),
+    url('font/iconfont.ttf') format('truetype'),
+    url('font/iconfont.svg#iconfont') format('svg');
+}
+.iconfont{font-family:"iconfont" !important;
+font-size:16px;font-style:normal;
+-webkit-font-smoothing: antialiased;
+-webkit-text-stroke-width: 0.2px;
+-moz-osx-font-smoothing: grayscale;}
+.header{width: 1200px;position: relative;margin: auto;border-bottom:1px solid #e5e5e5}
+.header * {font-size: 12px;color: #999;}
+.header1{height:32px;line-height:32px;position: relative}
+.header1 span{padding: 0 5px }
+.header2-login{position:absolute;height:32px;line-height:32px;right: 0;top: 0}
+.header2-login li{display: inline-block;float: left;margin-left: 20px}
+.header2-login li i {color:red}
+.cebian {position: fixed;text-align:center;right: 0;top: 0;width: 50px;height: 700px;background-color: black;z-index: 999}
+.cebian i {font-size: 20px;color: white;font-weight: 100}
+.cebian .cebian1{margin-top: 100px;margin-bottom: 10px}
+.cebian .cebian2{margin-bottom: 15px;font-size: 16px;padding: 5px}
+.search #logo a{display: inline-block;width: 290px;height: 130px;background: url("image/天猫logo.gif")}
+.search {background: white;width: 1600px;height: 130px}
+.search #logo{float: left;background: url("image/天猫logo.gif");height: 130px}
+.search #search-right{height: 130px;float: left}
+.search #search-in{position: relative;left:50px;top: 40px}
+.search #search-input {border: red 2px solid;height: 36px;width: 500px;float: left}
+.search #search-in #label {position: absolute;top: 10px;left: 15px}
+#search-button {background: red;color: white;font-size: 14px;font-weight: 700;height: 40px;width: 100px;float: left;letter-spacing: 5px}
+.search #hotwords li {float: left;margin-right: 10px;padding: 3px}
+
+.list {width: 1600px;height: 36px;background: white;position: relative;left: 50px;z-index: 99;border-bottom: pink 2px solid}
+.list .guide-list {width: 200px ;height: 500px;float: left;position: absolute}
+.list .guide-list a {display: inline-block;height: 20px;color: white}
+.list .guide-list  #list-first  {height: 35px;background: #FF0036}
+.list .guide-list  #list-first a{line-height: 33px;color: #fff;font-size: 16px;font-weight: 700}
+.list .guide-list i{line-height: 33px;color: #fff;font-size: 16px;opacity:0.5;padding: 0 5px}
+.list .guide-list .guide-list-first {background-color: rgba(0,0,0,0.5)}
+.list .guide-list  .second-floor {position: absolute;background-color: white;left: 200px;top: 35px;display: none;width: 400px;height: 500px}
+.list .guide-list  .second-floor  .guide-list-second{width: 50px;height: 20px;border-right: #99aecb 1px solid;margin: 20px;font-size: 16px;color: black}
+
+.list .guide-title {height: 36px;position: absolute;left: 200px}
+.list .guide-title .second img {display:inline-block;height: 35px}
+.list .guide-title .second li {float: left;margin: 0 10px;height: 35px}
+.list .guide-title .second li a {display: inline-block;line-height: 35px;font-size: 16px;color: black}
+
+.lunbo {height: 550px;width: 1600px;position: relative}
+.lunbo .lunbo-img {display:none;position: absolute;left: 0;top:0;height: 550px}
+.lunbo .bottom-icon{position: absolute;bottom: 30px;left: 400px}
+.lunbo .bottom-icon li{float: left;width: 30px;height: 10px;background-color: rgba(0,0,0,0.6);margin-left: 30px}
+
+.goods-list{width: 1600px;height: 100%;margin: 60px}
+.goods-list-head{width:1600px;height: 36px}
+.goods-list-head .goods-list-logo{float:left;width: 200px;height: 36px}
+.goods-list-head .goods-list-logo img{height: 25px}
+.goods-list-head .goods-list-intro {position: relative;left:500px;height: 36px}
+.goods-list-intro li {float: left;margin:0 30px;line-height: 36px;font-size: 16px;color: black}
+.goods-list-body {width: 1100px;height: 700px}
+.goods-list-body .goods-list-pic{height: 700px;width: 235px;float: left}
+.goods-list-body .goods-list-pic img{width: 235px;height: 618px}
+.goods-list-body .goods-list-goodpic {float: left;background: white;margin: 0 16px 16px 16px;width: 240px;height: 300px }
+.goods-list-body .goods-list-goodpic  a img  {width: 185px;height: 185px}
+.goods-list-body .goods-list-goodpic .goodname {width: 240px;text-align: center}
+.goods-list-body .goods-list-goodpic .goodprice{text-align: center;color: red}
+.user-login-mask{width:100%;height:100%;position:fixed;background:rgba(0,0,0,0.5);z-index:100;top:0;left:0;display:none}
+.box-login{width:740px;height:375px;margin:100px auto;z-index:100;position:relative;border-radius:5px ; background:white;overflow: hidden}
+.box-login  .header{background:#e7ecf2;height:30px;font-size:14px;font-weight:bold;color:#abb6d2;padding:0 10px;line-height:30px;margin:0}
+.box-login .left{width:360px;height:100%;float:left;border-right:1px dotted black;overflow: hidden}
+.box-login .left .tab-box{text-align:center;padding:20px 0;font-size:14px;color:#abb6d2;cursor:pointer}
+.box-login .phone-login{display:none}
+.box-login .left .part1{padding:0 70px}
+.box-login .left select{width:196px;padding:2px 5px;border:1px solid #CDDDEF}
+.box-login  .pr {margin-top:15px}
+.box-login  .pr *{width:196px;font-weight:bold;border:1px solid #CDDDEF;padding:6px;color:#333}
+.box-login  button {width:95px;height:31px;background:url(image/loginbottom.png) no-repeat 0 -132px;color:white;margin:0 auto;border-radius:5px}
+.box-login .id-login {display:block}
+.box-login .right{width:360px;height:100%;float:left;overflow: hidden}
+.right .tab-box{font-size:14px;color:#abb6d2;text-align:center;padding:20px 0}
+.right select{width:196px;padding:2px 5px;border:1px solid #CDDDEF}
+.right .sid {background:#015e98;border-radius:5px;width:60px;display:inline-block;color:white;font-size:12px}
+.exit {width:15px;height:15px;background:white url(image/logintip.png) no-repeat 0 -499px;z-index:1000;display:inline-block}
+
+
+.good-main-content{background: white;width: 1400px;height: 2600px}
+#zhaopaiHead {width: 1400px;height: 45px;background: #FF0036;text-align: center}
+#zhaopai1 {background: #FF0036 url(image/抬头.jpg) no-repeat 0 0;height: 45px;width:1200px;margin: 0 auto}
+#zhaopaiBody {position:relative;left:-300px;width: 1920px;height:150px;background: url(image/商铺招牌.gif)}
+.goodSituation{margin-top: 50px;width: 1400px;background: white}
+#goodpic{float: left;width: 420px;height: 700px}
+#bigpic {position: relative}
+#smallpicList li{width: 60px;height: 60px;float: left;padding: 12px}
+#smallpicList li img {width: 60px;height: 60px}
+#goodinf{width: 510px;height: 700px;float:left;position: relative;left: 20px}
+#goodinf h2 {font-weight: bold;color: black;font-size: 16px}
+#goodbackground1{margin-top:20px;background: url(image/表格背景.png) no-repeat 0 0;width: 510px;height: 50px;background-size: 100% 50px}
+#goodinficon{margin: 5px}
+#goodbackgroundtip{color: white;position: relative;bottom: 10px}
+#goodbackground2{width: 510px;height: 120px;background: url(image/下载2.png)}
+#goodinficon2{height: 16px}
+#goodbackgroundtip3{position:relative;left:150px;padding-left:26px;color:#FF0036;font-size: 12px;background: url(image/箭头.png) no-repeat 0 0;background-size: 16px 16px}
+#goodfoot span,.goodtips {font-size: 12px;color: #999;margin-left: 15px}
+#goodreport {position: relative;left: 150px}
+#goodbackground2 li {padding:5px}
+#goodtips1 {margin-left:20px;text-decoration:line-through;color:black}
+#goodtips2{margin-left:20px;font-size: 20px;color: #FF0036}
+#goodtips3 {margin-left:20px;color: #FF0036}
+#goodtip4{display: inline-block;background-color: #f47a86;position: relative;left:10px;color: white}
+#goodtip4bottom {display: inline-block;width: 0;height: 0;border-width: 5px;border-style:solid;border-color:transparent transparent #f47a86 transparent ;position: absolute;left: -5px;bottom: 0}
+#gooddate{margin-top: 40px}
+#gooddate li {float: left;width: 150px;text-align: center;border-top: #999 1px solid;border-bottom:1px solid #999;padding:10px;font-size: 12px;color: #999 }
+#goodbanben {width: 510px;height: 150px;margin-top: 5px}
+.goodbanbentitle{text-align: center;float: left;width: 70px;height: 100px;line-height: 100px}
+#banbenlist li {float:left;height: 30px;line-height:30px;color:black;font-size:12px;border: 1px solid #999;padding:0 5px;margin: 5px;position: relative;top:5px}
+#goodamount{width: 510px;height: 350px;position: relative;top:-30px}
+#goodchoice{width: 300px;height: 100px;line-height: 100px;float: left}
+#goodamount input{width: 40px;height: 30px}
+#goodamount span {position: relative ;left: 20px}
+#goodbuy{width: 500px;height: 100px;float: left;text-align: center}
+#goodbuybutton1 {display: inline-block;width: 180px;height: 40px;border: 1px solid #FF0036;color: #FF0036;line-height: 40px;font-size: 16px;text-align: center;background: #ffeded;margin: auto}
+#goodbuybutton2 {display: inline-block;width: 180px;height: 40px;background: #ff0036;line-height: 40px;font-size: 16px;text-align: center;color: white;text-space: 5px;margin: auto;position: relative}
+#goodcompromise{width: 500px;height: 200px;float: left}
+#goodcompromise li {float: left;margin: 10px;font-size: 12px}
+#goodad{width: 200px;float: left;position: relative;left: 50px;border-top: #999 1px dotted;background: white;padding-top: 20px}
+#goodad #goodadtitle {position: absolute;background: white;top:-20px;left:40px;height: 20px;width: 100px;color: #999}
+#goodad li{height: 175px;width: 175px;text-align: center;overflow: hidden;margin-bottom: 30px;padding: 10px}
+#goodad a {text-overflow: ellipsis;overflow: hidden}
+#goodad img{width: 140px;height: 140px}
+#picarea {width: 160px;height: 160px;position: absolute;;top:0;left:0;background:url(image/小点.png) repeat 0 0;z-index: 100}
+#showarea{background: url(image/商品实图1.jpg) no-repeat 0 0;display: none;width: 400px;height: 500px;position: absolute;left: 440px;top:0;background-size: 200% 200%;z-index: 200}
+#advideo{width: 600px;height: 600px;position: relative;top:100px;left: 200px}
