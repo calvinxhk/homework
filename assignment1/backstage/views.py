@@ -5,6 +5,8 @@ from backstage import models
 from user import models as userinfo
 from static.plugins.分页器 import PageX
 from user.forms_class import Register
+from django.db.models import Q,Count
+from backstage.group_form import GroupADD,GUserADD
 
 def login(request):
     '''
@@ -52,34 +54,33 @@ def backstage(request):
     :return:
     '''
     if request.method=='GET':
-        if request.session['rid']:
-            data = userinfo.User.objects.all()
-            url = request.path
-            page = request.GET.get('page')
-            Page = PageX(data,url,30,page)
-            return render(request, 'backstage/backstage.html',{'page':Page})
-        else:
-            redirect('/admin/login.html')
+        data = userinfo.User.objects.all()
+        url = request.path
+        page = request.GET.get('page')
+        Page = PageX(data,url,30,page)
+        return render(request, 'backstage/backstage.html',{'page':Page})
 
-@logconfirm
-def backgroup(request):
-    '''
-    用户组管理界面
-    :param request:
-    :return:
-    '''
-
-
-    return render(request,'backstage/backgroup.html')
 
 @logconfirm
 def detail(request,param):
+    '''
+    用户详细信息页面
+    :param request:
+    :param param: 用户uid
+    :return:
+    '''
     data = userinfo.User.objects.filter(uid=param).first()
-    return render(request,'backstage/detail.html',{'data':data})
+    group = userinfo.GroupUser.objects.filter(uid=param)
+    return render(request,'backstage/detail.html',{'data':data,"group":group})
 
 
 @logconfirm
 def useradd(request):
+    '''
+    增加用户页面
+    :param request:
+    :return:
+    '''
     if request.method == 'GET':
         form = Register(request)
         return render(request, 'backstage/adduser.html', {'form': form, })
@@ -101,14 +102,20 @@ def useradd(request):
                         f.write(chun)
                 form.cleaned_data['avatar'] = file_path
                 userinfo.User.objects.create(**form.cleaned_data)
-                return redirect('backstage.html')
+                return redirect('/admin/backstage.html')
             else:
                 msg = '账号已存在'
                 return render(request, 'backstage/adduser.html', {'form': form, 'msg': msg})
         return render(request, 'backstage/adduser.html', {'form': form})
 
+
 @logconfirm
 def userdel(request):
+    '''
+    删除用户页面
+    :param request:
+    :return:
+    '''
     if request.method =='POST':
         ids = request.POST.get("id").split(',')
         for id in ids[:-1]:
@@ -117,19 +124,223 @@ def userdel(request):
 
 @logconfirm
 def userupdate(request):
-    if request.method=="POST":
-        print(request.POST)
+    '''
+    更新用户信息
+    :param request:
+    :return:
+    '''
+    if request.method == "POST":
+        for m in request.POST:
+            if m =='csrfmiddlewaretoken':
+                continue
+            res = request.POST.getlist(m)
+            uid = res[0]
+            phone = res[1]
+            userinfo.User.objects.filter(uid=uid).update(phone=phone)
+    return HttpResponse('ok')
+
+@logconfirm
+def search(request):
+    '''
+    组合条件搜索用户信息
+    :param request:
+    :return:
+    '''
+    if request.method == 'POST':
+        condition = request.POST.getlist('condition')
+        value = request.POST.getlist('value')
+        ckind = set(condition)
+        conn = Q()
+        for item in ckind:
+            q = Q()
+            q.connector='OR'
+            n=0
+            for data in condition:
+                if data == item:
+                    q.children.append((data,value[n]))
+                n += 1
+            conn.add(q,"AND")
+        data=userinfo.User.objects.filter(conn)
+        url = request.path
+        page = request.GET.get('page')
+        Page = PageX(data, url, 30, page)
+        return render(request, 'backstage/backstage.html', {'page': Page})
+
+
+@logconfirm
+def backgroup(request):
+    '''
+    用户组管理界面
+    :param request:
+    :return:
+    '''
+    group = userinfo.Group.objects.all()
+    data = userinfo.GroupUser.objects.all().values('gid').annotate(count = Count('gid'))
+    return render(request,'backstage/backgroup.html',{'data':data,'group':group})
+
+
+@logconfirm
+def groupsearch(request):
+    '''
+    用户组条件搜索
+    :param request:
+    :return:
+    '''
+    if request.method == 'POST':
+        condition = request.POST.getlist('condition')
+        value = request.POST.getlist('value')
+        ckind = set(condition)
+        conn = Q()
+        for item in ckind:
+            q = Q()
+            q.connector='OR'
+            n=0
+            for data in condition:
+                if data == item:
+                    q.children.append((data,value[n]))
+                n += 1
+            conn.add(q,"AND")
+        group=userinfo.Group.objects.filter(conn)
+        data = userinfo.GroupUser.objects.all().values('gid').annotate(count=Count('gid'))
+        return render(request, 'backstage/backgroup.html',{'data':data,'group':group})
+    else:
+        return redirect('/admin/backstage.html')
+
+
+@logconfirm
+def groupadd(request):
+    '''
+    用户组增加
+    :param request:
+    :return:
+    '''
+    if request.method == 'GET':
+        form = GroupADD()
+        return render(request, 'backstage/addgroup.html', {'form': form, })
+    else:
+        form = GroupADD( request.POST)
+        if form.is_valid():
+            gname = form.cleaned_data.get('gname')
+            data = userinfo.Group.objects.filter(gname=gname)
+            if not data:
+                userinfo.Group.objects.create(**form.cleaned_data)
+                return redirect('/admin/backgroup.html')
+            else:
+                msg = '分组已存在'
+                return render(request, 'backstage/addgroup.html', {'form': form, 'msg': msg})
+        return render(request, 'backstage/addgroup.html', {'form': form})
+
+
+@logconfirm
+def groupdel(request):
+    '''
+    用户组删除
+    :param request:
+    :return:
+    '''
+    if request.method == "POST":
+        res = request.POST.get('gid').split(',')
+        for gid in res[:-1]:
+            userinfo.GroupUser.objects.filter(gid=gid).delete()
+            userinfo.Group.objects.filter(gid=gid).delete()
+        return HttpResponse('TURE')
+    else:
+        return redirect('/admin/backgroup.html')
+
+
+@logconfirm
+def groupupdate(request):
+    '''
+    用户组更新名字
+    :param request:
+    :return:
+    '''
+    if request.method == "POST":
+        for m in request.POST:
+            if m =='csrfmiddlewaretoken':
+                continue
+            res = request.POST.getlist(m)
+            gid = res[0]
+            gname = res[1]
+            userinfo.Group.objects.filter(gid=gid).update(gname=gname)
     return HttpResponse('ok')
 
 
+@logconfirm
+def gdetail(request,gid):
+    '''
+    跳转用户组所有成员页面
+    :param request:
+    :param gid:
+    :return:
+    '''
+    group = userinfo.Group.objects.filter(gid=gid)
+    data = userinfo.Group.objects.filter(gid=gid).first().groupuser_set.all().values(
+        'uid__uid','uid__name','uid__phone',)
+    return render(request,'backstage/gdetail.html',{'group':group,'data':data})
+
+
+@logconfirm
+def gdeluser(request):
+    '''
+    删除用户组中成员
+    :param request:
+    :return:
+    '''
+    if request.method == "POST":
+        res = request.POST.get('gid').split(',')
+        gid = res[0]
+        for uid in res[1:-1]:
+            userinfo.GroupUser.objects.filter(uid=uid,gid=gid).delete()
+        return HttpResponse('TURE')
+    else:
+        return redirect('/admin/backgroup.html')
+
+
+@logconfirm
+def gadduser(request,gid):
+    '''
+    增加用户组中成员
+    :param request:
+    :return:
+    '''
+    if request.method == 'GET':
+        form = GUserADD()
+        group = userinfo.Group.objects.filter(gid=gid).first()
+        return render(request, 'backstage/gadduer.html', {'form': form,'group':group})
+    else:
+        form = GUserADD( request.POST)
+        group = userinfo.Group.objects.filter(gid=gid).first()
+        if form.is_valid():
+            uid = form.cleaned_data.get('uid')
+            user = userinfo.User.objects.filter(uid=uid)
+            if user:
+                data = userinfo.GroupUser.objects.filter(uid=uid,gid=gid)
+                if not data:
+                    userinfo.GroupUser.objects.create(uid_id=uid,gid_id=gid)
+                    return redirect('/admin/backgroup.html')
+                else:
+                    msg = '用户已存在'
+                    return render(request, 'backstage/gadduer.html', {'form': form,'group':group, 'msg': msg})
+        msg = '用户不存在'
+        return render(request, 'backstage/gadduer.html', {'form': form,'group':group, 'msg': msg})
+
 urlpatterns = [
-    url(r'login.html$',login),
-    url(r'backstage.html$',backstage),
-    url(r'backgroup.html$',backgroup),
-    url(r'detail/(\d+).html',detail),
-    url(r'backstage/add.html$',useradd),
-    url(r'del.html$',userdel),
-    url(r'update.html$',userupdate)
+    url(r'^login.html$',login),
+    url(r'^backstage.html$',backstage),
+    url(r'^detail/(\d+).html',detail),
+    url(r'^backstage/add.html$',useradd),
+    url(r'^del.html$',userdel),
+    url(r'^update.html$',userupdate),
+    url(r'^search.html$',search),
+    url(r'^backgroup.html$',backgroup),
+    url(r'^groupdel.html$',groupdel),
+    url(r'^groupupdate.html$',groupupdate),
+    url(r'^backstage/groupadd.html$',groupadd),
+    url(r'^groupsearch.html$',groupsearch),
+    url(r'^groupdetail/(\d+).html$',gdetail),
+    url(r'^gdeluser.html$',gdeluser),
+    url(r'^gadduser/(\d+).html',gadduser)
 
 
 

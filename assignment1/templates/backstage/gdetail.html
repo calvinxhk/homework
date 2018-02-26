@@ -7,6 +7,7 @@
 {% endblock %}
 
 {% block html %}
+    <span id="groupid">{{ group.0.gid }}</span>当前组：{{ group.0.gname }}
     <div >
                 <form action="/admin/groupsearch.html" method="POST" onsubmit="return tosearch()">
                     {% csrf_token %}
@@ -27,7 +28,7 @@
                      <li role="presentation" ><a id="selectall">全选</a></li>
                      <li role="presentation"><a id="looseall">取消</a></li>
                      <li role="presentation"><a id="selectopp">反选</a></li>
-                     <li role="presentation" ><a id="add" href="/admin/backstage/groupadd.html">增加</a></li>
+                     <li role="presentation" ><a id="add" href="/admin/gadduser/{{ group.0.gid }}.html">增加</a></li>
                      <li role="presentation"><a id="del">删除</a></li>
                      <li role="presentation"><a id="update" editor=false>更新</a></li>
                      <li role="presentation"><a><button type="submit" class='btn btn-default'>搜索</button></a></li>
@@ -38,35 +39,25 @@
     <div style="width: 100%;height:50px">
 
         <ul class="nav nav-tabs">
-            <li role="presentation" class="bb"><a ><input type="checkbox"></a></li>
-            <li role="presentation" class="bb"><a class="standard">id</a></li>
-            <li role="presentation" class="bb"><a class="standard">组名</a></li>
-            <li role="presentation" class="bb"><a class="standard">查看详情</a></li>
-            <li role="presentation" class="bb"><a class="standard">组员人数</a></li>
+            <li role="presentation" class="bb"><a ></a></li>
+            <li role="presentation" class="bb"><a class="standard">组员id</a></li>
+            <li role="presentation" class="bb"><a class="standard">组员</a></li>
+            <li role="presentation" class="bb"><a class="standard">组员手机</a></li>
+
 
         </ul>
     </div>
-    {% for row in group %}
+    {% for row in data %}
 
         <div style="width: 100%;height:50px">
         <ul class="nav nav-tabs">
             <li role="presentation" class="bb"><a><input title="选择" type="checkbox" class="mycheck"></a></li>
-            <li role="presentation" class="bb"><a class="standard" >{{  row.gid }}</a></li>
-            <li role="presentation" class="bb"><a class="standard">{{ row.gname }}</a></li>
+            <li role="presentation" class="bb"><a class="standard" >{{ row.uid__uid }}</a></li>
+            <li role="presentation" class="bb"><a class="standard">{{ row.uid__name }}</a></li>
+            <li role="presentation" class="bb"><a class="standard">{{ row.uid__phone }}</a></li>
 
-            <li role="presentation" class="bb"><a href="/admin/groupdetail/{{ row.gid }}.html" class="standard">查看详情</a></li>
-            {% for record in data %}
-                {% if record.gid == row.gid %}
-            <li role="presentation" class="bb"><a class="standard" >{{ record.count }}人</a></li>
-
-                {% endif %}
-                {% endfor %}
         </ul>
-
-
-
-
-        </div>
+    </div>
 
     {% endfor %}
 
@@ -95,7 +86,7 @@
 
     });
     $('#del').click(function () {
-         var result = '';
+         var result = $('#groupid').text()+',';
         $(".mycheck").each(function () {
             if($(this).prop('checked')===true){
                 result = result+ $(this).parent().parent().next().text()+',';
@@ -105,7 +96,7 @@
         var data = {'gid':result,'csrfmiddlewaretoken':'{{csrf_token}}'};
         $.ajax(
                 {
-                    url:'/admin/groupdel.html',
+                    url:'/admin/gdeluser.html',
                     type:'POST',
                     data:data,
                     dataType:'JSON',

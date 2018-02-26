@@ -109,7 +109,8 @@ def home(request,param):
     '''
     id = param
     data = models.User.objects.filter(uid=id).first()
-    return render(request,'user/home.html',{'data':data})
+    group = models.Group.objects.filter(uid_id = id)
+    return render(request,'user/home.html',{'data':data,'group':group})
 
 
 def logout(request):

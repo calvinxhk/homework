@@ -10,6 +10,12 @@ class User(models.Model):
     email = models.EmailField(max_length=32,null=True)
     rg_time = models.CharField(max_length=32,null=True)
     avatar = models.CharField(max_length=128,null=True)
-    choose = [(1,'普通用户'),(2,'黄金会员'),(3,'白金会员'),(4,'至尊会员')]
-    group = models.IntegerField(choices=choose,default=1)
 
+
+class Group(models.Model):
+    gid = models.BigAutoField(primary_key=True)
+    gname = models.CharField(max_length=32,null=True)
+
+class GroupUser(models.Model):
+    uid = models.ForeignKey(to=User)
+    gid = models.ForeignKey(to=Group)

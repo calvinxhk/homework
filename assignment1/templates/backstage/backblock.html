@@ -40,33 +40,7 @@
                   <li role="presentation" class="active" id="user"><a href="/admin/backstage.html">用户管理</a></li>
                   <li role="presentation" id="group"><a href="/admin/backgroup.html">用户组管理</a></li>
             </ul>
-            <div >
-                 <div class="dropdown">
-                      <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                        条件
-                        <span class="caret"></span>
-                      </button>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                            <li><a href="#">id</a></li>
-                            <li><a href="#">账号</a></li>
-                            <li><a href="#">手机</a></li>
-                            <li><a href="#">昵称</a></li>
-                            <li><a href="#">等级</a></li>
 
-                      </ul>
-                 </div>
-            </div>
-            <div>
-                 <ul class="nav nav-pills">
-                     <li role="presentation" ><a id="selectall">全选</a></li>
-                     <li role="presentation"><a id="looseall">取消</a></li>
-                     <li role="presentation"><a id="selectopp">反选</a></li>
-                     <li role="presentation" ><a id="add" href="/admin/backstage/add.html">增加</a></li>
-                     <li role="presentation"><a id="del">删除</a></li>
-                     <li role="presentation"><a id="update" editor=false>编辑模式</a></li>
-                     <li role="presentation"><a id="save">保存</a></li>
-                 </ul>
-            </div>
 
             {% block html %}{% endblock %}
         </div>
@@ -81,108 +55,7 @@
 
 
 </script>
-    <script>
-    $('#selectall').click(function () {
-        $('.mycheck').prop('checked',true)
-    });
-    $('#looseall').click(function () {
-        $('.mycheck').prop('checked',false)
-    });
-    $('#selectopp').click(function () {
-         $('.mycheck').each(function () {
-             if($(this).prop('checked')===false)
-             {$(this).prop('checked',true)}
-             else {
-                 $(this).prop('checked',false)
-             }
-         });
 
-
-    });
-    $('#del').click(function () {
-         var result = '';
-        $(".mycheck").each(function () {
-            if($(this).prop('checked')===true){
-                 $(this).parent().parent().parent().parent().remove();
-                 result = result+ $(this).parent().parent().next().text()+','
-            }});
-        var data = {'id':result,'csrfmiddlewaretoken':'{{csrf_token}}'};
-        $.ajax(
-                {
-                    url:'/admin/del.html',
-                    type:'POST',
-                    data:data,
-                    dataType:'JSON',
-                    success:function (arg) {
-                        console.log(arg)
-
-                    }
-                }
-            )
-
-    });
-     $('#update').click(function () {
-       if($(this).attr('editor')==='false')
-       {$(this).addClass('editorback');
-        $(".mycheck").each(function () {
-            if($(this).prop('checked')===true) {
-                var target = $(this).parent().parent().next().next().next().children()
-                    ,phone = target.text();
-                target.empty();
-                target.html('<input value="'+phone+'" type="text" style="width:120px">' +
-                    '<input value="'+phone+'"  type="text" style="display:none">')}
-            });
-        $(this).attr('editor','true');
-       }
-       else {$(this).removeClass('editorback');
-       var all_list= [];
-       $(".mycheck").each(function () {
-           var box = {};
-           var target = $(this).parent().parent().next().next().next().children();
-            var phone = target.children().last().val();
-            var new_phone =  target.children().first().val();
-            if(phone!==new_phone && new_phone){
-                box['uid']=$(this).parent().parent().next().text();
-                box['phone']=new_phone;
-                all_list.push(box)
-            }
-            target.children().remove();
-            if(new_phone){target.text(new_phone)}else { target.text(phone)}
-
-       });
-            $(this).attr('editor','false');
-            var data = {'csrfmiddlewaretoken':'{{csrf_token}}'};
-           data['all_list']=all_list;
-           if($.isEmptyObject(all_list)){}
-       else {
-
-                $.ajax({
-                url:'/admin/update.html',
-                data:data,
-                type:'POST',
-                dataType:'JSON',
-                success:function (arg) {
-                    console.log(arg)
-                }
-            })
-           }}
-
-    }
-    )
-
-
-
-
-
-
-
-
-
-
-
-
-
-    </script>
 
 
     {% block js%}{% endblock %}

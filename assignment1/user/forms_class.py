@@ -90,8 +90,8 @@ class Login(Form):
         self.request = request
 
     def clean_piccode(self):
-        inputcode = self.cleaned_data['piccode']
-        turecode = self.request.session['piccode']
+        inputcode = self.cleaned_data.get('piccode')
+        turecode = self.request.session.get('piccode')
         if inputcode == turecode:
             return inputcode
         raise ValidationError('验证码错误')

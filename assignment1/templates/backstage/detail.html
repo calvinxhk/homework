@@ -19,7 +19,7 @@
             <td>phone</td>
             <td>email</td>
             <td>头像</td>
-            <td>会员等级</td>
+            <td>分组</td>
         </tr>
         </thead>
         <tbody>
@@ -30,7 +30,10 @@
                 <td>{{ data.phone }}</td>
                 <td>{{ data.email }}</td>
                 <td><img src="/{{ data.avatar }}" class="img-circle img-responsive" style="width: 200px;height: 200px"></td>
-                <td>{{ data.get_group_display }}</td>
+                <td>{% for row in group %}
+                {{ row.gid.gname }}
+                    {% endfor %}
+                </td>
         </tr>
         </tbody>
 
