@@ -1,6 +1,7 @@
 from django.forms import Form,fields,widgets
 from django.core.exceptions import ValidationError
 
+
 class Register(Form):
     name = fields.CharField(
         min_length=6,max_length=16,

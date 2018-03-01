@@ -6,6 +6,7 @@ from static.plugins.piccode import piccode
 from io import BytesIO
 import time
 
+
 def logconfirm(wrapper):
     '''
     登录状态装饰器
@@ -13,7 +14,6 @@ def logconfirm(wrapper):
     :return:
     '''
     def fun(request,param,*args,**kwargs):
-        print(param)
         if param == str(request.session.get('uid')):
             res = wrapper(request,param,*args,**kwargs)
             return res
