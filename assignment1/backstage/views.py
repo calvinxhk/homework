@@ -340,7 +340,8 @@ urlpatterns = [
     url(r'^groupsearch.html$',groupsearch),
     url(r'^groupdetail/(\d+).html$',gdetail),
     url(r'^gdeluser.html$',gdeluser),
-    url(r'^gadduser/(\d+).html',gadduser)
+    url(r'^gadduser/(\d+).html',gadduser),
+
 
 
 
